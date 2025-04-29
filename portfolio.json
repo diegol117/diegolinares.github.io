@@ -1,224 +1,227 @@
 {
   "name": "Diego M. Linares",
-  "label": "Optional Label",
-  "image_path": "img/default-image.png",
+  "label": "Math | Programming",
+  "image_path": "img/default-image2.jpg",
   "contact": {
     "email": "Diegolinares117@gmail.com",
-    "phone": "123-456-7890",
-    "location": "City, State, Country"
+    "phone": "0584123801413",
+    "location": ""
   },
-  "summary": "A short .",
+  "summary": "Python developer specializing in mathematical visualization using Manim.",
   "base_url": "127.0.0.1:5500",
   "social_links": [
     {
-      "label": "Personal Website",
-      "url": "https://sample.com",
-      "svg_path": "img/globe.svg"
+      "label": "Patreon",
+      "url": "https://patreon.com/MathborosNexus",
+      "svg_path": "img/patreon.svg"
     },
     {
-      "label": "First Social",
-      "url": "https://sample.com",
+      "label": "Linkedin",
+      "url": "https://www.linkedin.com/in/diegolinares117/",
       "svg_path": "img/linkedin.svg"
     },
     {
-      "label": "Second Social",
-      "url": "https://sample.com",
-      "svg_path": "img/github.svg"
+      "label": "Fiverr",
+      "url": "https://www.fiverr.com/users/diegolinares/",
+      "svg_path": "img/fiverr2.svg"
     }
   ],
-  "work_experience": [
-    {
-      "company": "Latest Job",
-      "position": "Position One",
-      "url": "https://sample.com",
-      "start_date": "01/01/2020",
-      "end_date": "Present",
-      "summary": "Short summary about present job and what the position entails",
-      "highlights": [
-        "First Duty of Current Job",
-        "Second Duty of Current Job",
-        "Third Duty of Current Job"
-      ]
-    },
-    {
-      "company": "Previous Job",
-      "position": "Position Two",
-      "url": "https://sample.com",
-      "start_date": "01/01/2010",
-      "end_date": "01/01/2020",
-      "summary": "Short summary about previous job and what that position entailed",
-      "highlights": [
-        "First Duty of Previous Job",
-        "Second Duty of Previous Job",
-        "Third Duty of Previous Job"
-      ]
-    }
-  ],
+  
+    "work_experience": [
+      {
+        "company": "Lviv Polytechnic National University",
+        "position": "Python Engineer",
+        "url": "",
+        "start_date": "12/2024",
+        "end_date": "Present",
+        "summary": "Developing visualizations using Manim, Python, and data visualization libraries for research and education.",
+        "highlights": [
+          "Creating physics and math simulations with Python",
+          "Designing interactive and static educational graphics",
+          "Collaborating with researchers on data representation",
+          "Proficient in Manim, Matplotlib, and LaTeX"
+        ]
+      },
+      {
+        "company": "Universidad de Carabobo",
+        "position": "University Professor",
+        "url": "",
+        "start_date": "12/2023",
+        "end_date": "Present",
+        "summary": "",
+        "highlights": []
+      },
+      {
+        "company": "CUTMAC",
+        "position": "Technical Translator",
+        "url": "",
+        "start_date": "11/2019",
+        "end_date": "Present",
+        "summary": "Translating technical manuals for woodworking tools, adapting content for Argentine market.",
+        "highlights": [
+          "Translating instruction manuals and safety guides",
+          "Localizing technical content to Spanish"
+        ]
+      },
+      {
+        "company": "SumandoLab",
+        "position": "Statistical Programmer",
+        "url": "",
+        "start_date": "12/2022",
+        "end_date": "02/2025",
+        "summary": "",
+        "highlights": []
+      },
+      {
+        "company": "Universitat de les Illes Balears",
+        "position": "Data Analyst",
+        "url": "",
+        "start_date": "05/2023",
+        "end_date": "11/2023",
+        "summary": "Statistical analysis on how prolonged mask usage affects children's language development.",
+        "highlights": [
+          "Performed statistical analysis using R",
+          "Wrote research reports on findings"
+        ]
+      },
+      {
+        "company": "Linguaserve",
+        "position": "Technical Translator",
+        "url": "",
+        "start_date": "02/2022",
+        "end_date": "01/2023",
+        "summary": "",
+        "highlights": []
+      }
+    ],
+  
   "projects": [
     {
-      "title": "My First Project",
-      "summary": "Short summary about my first project",
-      "url": "https://sample.com",
+      "title": "Animation projects with python",
+      "summary": "Educational animations and visual proofs created using Python and Manim library",
+      "url": "https://www.fiverr.com/users/diegolinares/portfolio",
       "highlights": [
-        "First Highlight of Project One",
-        "Second Highlight of Project One",
-        "Third Highlight of Project One"
+        "Developed mathematical visualizations for educational purposes",
+        "Created animated proofs of geometric theorems and algebraic formulas",
+        "Implemented random walk simulations with custom visual styles",
+        "Produced high-quality renders for academic presentations"
       ],
       "images": [
         {
-          "img_path": "https://picsum.photos/600/338?random=1",
-          "caption": "Image Caption 1"
+          "img_path": "cap4.png",
+          "caption": "Animating proofs"
         },
         {
-          "img_path": "https://picsum.photos/600/338?random=2",
-          "caption": "Image Caption 2"
+          "img_path": "cap2.png",
+          "caption": "A visual proof of sum of squares"
         },
         {
-          "img_path": "https://picsum.photos/600/338?random=3",
-          "caption": "Image Caption 3"
-        }
-      ]
-    },
-    {
-      "title": "My Second Project",
-      "summary": "Short summary about my second project",
-      "url": "https://sample.com",
-      "highlights": [
-        "First Highlight of Project Two",
-        "Second Highlight of Project Two",
-        "Third Highlight of Project Two"
-      ],
-      "images": [
-        {
-          "img_path": "https://picsum.photos/600/338?random=4",
-          "caption": "Image Caption 4"
+          "img_path": "cap3.png",
+          "caption": "Random Walks project"
         },
         {
-          "img_path": "https://picsum.photos/600/338?random=5",
-          "caption": "Image Caption 5"
+          "img_path": "cap5.png",
+          "caption": "Visual proof of congruence of angles"
         },
         {
-          "img_path": "https://picsum.photos/600/338?random=6",
-          "caption": "Image Caption 6"
+          "img_path": "cap6.png",
+          "caption": "Visual proof of congruence of angles 2"
+        },
+        {
+          "img_path": "cap7.png",
+          "caption": "Cross product"
         }
       ]
     }
   ],
   "volunteer_experience": [
-    {
-      "organization": "Latest Organization",
-      "position": "Position One",
-      "url": "https://sample.com",
-      "start_date": "01/01/2020",
-      "end_date": "Present",
-      "summary": "Short summary about present volunteer work",
-      "highlights": [
-        "First Duty of Current Organization",
-        "Second Duty of Current Organization",
-        "Third Duty of Current Organization"
-      ]
-    },
-    {
-      "organization": "Previous Organization",
-      "position": "Position Two",
-      "url": "https://sample.com",
-      "start_date": "01/01/2010",
-      "end_date": "01/01/2020",
-      "summary": "Short summary about previous volunteer work",
-      "highlights": [
-        "First Duty of Previous Organization",
-        "Second Duty of Previous Organization",
-        "Third Duty of Previous Organization"
-      ]
-    }
+
   ],
+
+
   "education": [
     {
-      "institution": "Institution One",
-      "location": "Institution One Location",
-      "url": "https://sample.com",
+      "institution": "Faculty of Science and Technology",
+      "location": "University of Carabobo, Venezuela",
+      "url": "http://www.uc.edu.ve/facul_facyt.php",
       "degrees": [
-        "Master of Science in Computer Science",
-        "Minor in Mathematics"
+        "Bachelor's degree in Mathematics"
       ],
-      "honors": ["Outstanding Student Award", "Dean's List"],
-      "gpa_cumulative": "3.5",
-      "gpa_major": "4.0",
-      "graduation_date": "01/01/2005"
-    },
-    {
-      "institution": "Institution Two",
-      "location": "Institution Two Location",
-      "url": "https://sample.com",
-      "degrees": ["Bachelor of Science in Physics"],
-      "honors": ["Scholarship Recipient"],
-      "gpa_cumulative": "3.2",
-      "gpa_major": "3.9",
-      "graduation_date": "01/01/2000"
+      "honors": [],
+      "gpa_cumulative": "",
+      "gpa_major": "",
+      "graduation_date": "2024"
     }
+
   ],
   "skills": [
     {
-      "name": "My First Skill",
-      "proficiency": 100,
-      "proficiency_label": "Proficiency Level"
+      "name": "Python",
+      "proficiency": 80,
+      "proficiency_label": "Intermediate"
     },
     {
-      "name": "My Second Skill",
-      "proficiency": 80,
-      "proficiency_label": "Proficiency Level"
+      "name": "R (Programming Language)",
+      "proficiency": 70,
+      "proficiency_label": "Intermediate"
+    },
+    {
+      "name": "Data Visualization (Manim, Matplotlib)",
+      "proficiency": 75,
+      "proficiency_label": "Proficient"
+    },
+    {
+      "name": "LaTeX",
+      "proficiency": 75,
+      "proficiency_label": "Intermediate-Advanced"
+    },
+    {
+      "name": "Technical Translation (English-Spanish)",
+      "proficiency": 90,
+      "proficiency_label": "Professional Working Proficiency"
     }
   ],
   "interests": [
     {
-      "name": "My First Hobby",
-      "summary": "Short summary about my first Hobby",
+      "name": "Short works with Latex",
+      "summary": "A collection of whimsical vector illustrations created entirely with LaTeX (TikZ).",
       "images": [
         {
-          "img_path": "https://picsum.photos/600/338?random=7",
-          "caption": "Image Caption 7"
+          "img_path": "penguin1.jpeg",
+          "caption": "Graduation penguin in academic regalia (tikzpingus package)"
         },
         {
-          "img_path": "https://picsum.photos/600/338?random=8",
-          "caption": "Image Caption 8"
-        }
-      ]
-    },
-    {
-      "name": "My Second Hobby",
-      "summary": "Short summary about my second hobby",
-      "images": [
-        {
-          "img_path": "https://picsum.photos/600/338?random=9",
-          "caption": "Image Caption 9"
-        },
-        {
-          "img_path": "https://picsum.photos/600/338?random=10",
-          "caption": "Image Caption 10"
+          "img_path": "penguin2.png",
+          "caption": "Graduation penguin in academic regalia (tikzpingus package)"
         }
       ]
     }
   ],
   "languages": [
     {
-      "language": "English",
-      "fluency": "Native speaker"
+      "language": "Spanish",
+      "fluency": "Native",
+      "proficiency_level": 100,
+      "proficiency_label": "Native Speaker"
     },
     {
-      "language": "American Sign Language",
-      "fluency": "Professional Working Proficiency"
+      "language": "English",
+      "fluency": "Professional Working Proficiency",
+      "proficiency_level": 70,
+      "proficiency_label": "Professional Working Proficiency"
+    },
+    {
+      "language": "Portuguese",
+      "fluency": "Limited Working Proficiency",
+      "proficiency_level": 45,
+      "proficiency_label": "Limited Working Proficiency"
     }
   ],
   "references": [
     {
-      "name": "Person One",
-      "relation": "Previous Boss",
-      "reference": "Some nice things that Person One said about you, your work ethic, and how you provided value to their team."
-    },
-    {
-      "name": "Person Two",
-      "relation": "Previous Coworker",
-      "reference": "More kind things that Person Two said about you, what it was like working with you, and things you've accomplished."
+      "name": "Kyrylo Krusinsky",
+      "relation": "Former Supervisor at Fiverr",
+      "reference": "He is a conscientious and professional team member who consistently demonstrates strong work ethic and positive collaboration skills."
     }
   ]
 }

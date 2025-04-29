@@ -41,7 +41,7 @@
     <meta name="theme-color" content="#fafafa">
 
     <!-- Favicon for all browsers -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon2.ico" sizes="any">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
 
     <!-- Apple touch icon for iOS devices -->
@@ -69,36 +69,51 @@
             <h1>{{ name }}</h1>
             {% if label %}<h2 class="header-label">{{ label }}</h2>{% endif %}
             {% if contact.email or contact.phone or contact.location %}
-              <address>
-                <ul class="inline-list flex-responsive">
-                  {% if contact.email %}
-                    <li>
-                      <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
-                    </li>
-                  {% endif %}
-                  {% if contact.phone %}
-                    <li>
-                      <a href="tel:+{{ contact.phone | replace('-', '') }}">{{ contact.phone }}</a>
-                    </li>
-                  {% endif %}
-                  {% if contact.location %}<li>{{ contact.location }}</li>{% endif %}
-                </ul>
-              </address>
-            {% endif %}
-            {% if social_links %}
-              <ul class="inline-list flex-responsive">
-                {% for link in social_links %}
+            <address>
+              <ul class="inline-list flex-responsive contact-links">
+                {% if contact.email %}
                   <li>
-                    <a href="{{ link.url }}"
-                       rel="noopener noreferrer"
-                       aria-label="{{ link.label }}"
-                       class="link-with-icon">
-                      {% if link.svg_data %}{{ link.svg_data | safe }}{% endif %}
-                      {{ link.label }}
+                    <a href="mailto:{{ contact.email }}" 
+                       class="link-with-icon email-link"
+                       rel="noopener noreferrer">
+                      <span class="contact-label">{{ contact.email }}</span>
+                      <span class="external-indicator" aria-hidden="true">↗</span>
                     </a>
                   </li>
-                {% endfor %}
+                {% endif %}
+                {% if contact.phone %}
+                  <li>
+                    <a href="tel:+{{ contact.phone | replace('-', '') }}" 
+                       class="link-with-icon phone-link"
+                       rel="noopener noreferrer">
+                      <span class="contact-label">Contact</span>
+                      <span class="external-indicator" aria-hidden="true">↗</span>
+                    </a>
+                    <span class="visually-hidden">{{ contact.phone }}</span>
+                  </li>
+                {% endif %}
+                {% if contact.location %}<li class="location">{{ contact.location }}</li>{% endif %}
               </ul>
+            </address>
+            {% endif %}
+            {% if social_links %}
+            <ul class="inline-list flex-responsive social-links">
+              {% for link in social_links %}
+                <li class="social-link-item">
+                  <a href="{{ link.url }}"
+                     rel="noopener noreferrer"
+                     aria-label="{{ link.label }}"
+                     target="_blank"
+                     class="link-with-icon social-link">
+                    {% if link.svg_data %}
+                      <span class="social-icon">{{ link.svg_data | safe }}</span>
+                    {% endif %}
+                    <span class="social-label">{{ link.label }}</span>
+                    <span class="external-indicator" aria-hidden="true">↗</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
             {% endif %}
             {% if summary %}<p class="header-summary">{{ summary }}</p>{% endif %}
           </div>
@@ -137,7 +152,7 @@
 
           {% if projects %}
             <section>
-              <h2 class="section-heading">Projects</h2>
+              <h2 class="section-heading">Some works</h2>
               {% for project in projects %}
                 <section>
                   <h3>
@@ -154,17 +169,21 @@
                     </ul>
                   {% endif %}
                   {% if project.images %}
-                    <div class="gallery main-gallery">
-                      {% for img in project.images %}
-                        <figure>
+                  <div class="gallery main-gallery">
+                    {% for img in project.images %}
+                      <figure>
+                        <a href="{{ img.img_path }}" target="_blank" rel="noopener noreferrer">
                           <img width="600"
                                height="338"
                                src="{{ img.img_path }}"
-                               alt="{{ img.caption }}">
-                          <figcaption>{{ img.caption }}</figcaption>
-                        </figure>
-                      {% endfor %}
-                    </div>
+                               alt="{{ img.caption }}"
+                               class="gallery-image">
+                        </a>
+                        <figcaption>{{ img.caption }}</figcaption>
+                      </figure>
+                    {% endfor %}
+                  </div>
+
                   {% endif %}
                 </section>
               {% endfor %}
@@ -261,13 +280,14 @@
                 {% for skill in skills %}
                   <li>
                     <h3>{{ skill.name }}</h3>
-                    <div class="skill-bar">
-                      <div class="skill-bar-fill w-{{ skill.proficiency }}"
+                    <div class="skill-bar" data-progress="{{ skill.proficiency }}">
+                      <div class="skill-bar-fill w-{{ skill.proficiency_label }}"
                            role="meter"
                            aria-valuenow="{{ skill.proficiency }}"
                            aria-valuemin="0"
                            aria-valuemax="100">
-                        <span class="skill-bar-label">{{ skill.proficiency_label }}</span>
+                           <span class="skill-bar-label">{{ skill.proficiency_label }}</span>
+                        </span>
                       </div>
                     </div>
                   </li>
@@ -292,7 +312,7 @@
 
           {% if interests %}
             <section>
-              <h2 class="section-heading">Interests</h2>
+              <h2 class="section-heading">Related</h2>
               {% for interest in interests %}
                 <section>
                   <h3>{{ interest.name }}</h3>
@@ -309,6 +329,9 @@
                         </figure>
                       {% endfor %}
                     </div>
+
+                    
+
                   {% endif %}
                 </section>
               {% endfor %}
@@ -323,6 +346,10 @@
         <p>© {{ current_year }} {{ name }}. All rights reserved.</p>
       </div>
     </footer>
+    <div class="modal">
+      <span class="modal-close">&times;</span>
+      <img class="modal-img" src="" alt="Imagen ampliada">
+    </div>
 
     <script src="js/app.js"></script>
   </body>
