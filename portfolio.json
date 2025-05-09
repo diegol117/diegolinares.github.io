@@ -7,7 +7,7 @@
     "phone": "0584123801413",
     "location": ""
   },
-  "summary": "Python developer specializing in mathematical visualization using Manim.",
+  "summary": "Python developer specializing in mathematical visualization using ManimCE & ManimGL.",
   "base_url": "127.0.0.1:5500",
   "social_links": [
     {
@@ -34,12 +34,12 @@
         "url": "",
         "start_date": "12/2024",
         "end_date": "Present",
-        "summary": "Developing visualizations using Manim, Python, and data visualization libraries for research and education.",
+        "summary": "Developing visualizations using ManimCE & ManimGL, Python, and data visualization libraries for research and education.",
         "highlights": [
           "Creating physics and math simulations with Python",
           "Designing interactive and static educational graphics",
           "Collaborating with researchers on data representation",
-          "Proficient in Manim, Matplotlib, and LaTeX"
+          "Proficient in ManimCE & ManimGL, Matplotlib, and LaTeX"
         ]
       },
       {
@@ -98,7 +98,7 @@
   "projects": [
     {
       "title": "Animation projects with python",
-      "summary": "Educational animations and visual proofs created using Python and Manim library",
+      "summary": "Educational animations and visual proofs created using Python and ManimCE & ManimGL library",
       "url": "https://www.fiverr.com/users/diegolinares/portfolio",
       "highlights": [
         "Developed mathematical visualizations for educational purposes",
@@ -166,7 +166,7 @@
       "proficiency_label": "Intermediate"
     },
     {
-      "name": "Data Visualization (Manim, Matplotlib)",
+      "name": "Data Visualization (ManimCE & ManimGL, Matplotlib)",
       "proficiency": 75,
       "proficiency_label": "Proficient"
     },
