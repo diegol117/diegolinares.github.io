@@ -11,9 +11,9 @@
   "base_url": "127.0.0.1:5500",
   "social_links": [
     {
-      "label": "Patreon",
-      "url": "https://patreon.com/MathborosNexus",
-      "svg_path": "img/patreon.svg"
+      "label": "ComeUp",
+      "url": "https://comeup.com/en/@diegolinares",
+      "svg_path": "img/comeup.svg"
     },
     {
       "label": "Linkedin",
