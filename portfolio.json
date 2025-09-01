@@ -4,17 +4,12 @@
   "image_path": "img/default-image2.jpg",
   "contact": {
     "email": "Diegolinares117@gmail.com",
-    "phone": "0584123801413",
     "location": ""
   },
   "summary": "Python developer specializing in mathematical visualization using ManimCE & ManimGL.",
   "base_url": "127.0.0.1:5500",
   "social_links": [
-    {
-      "label": "Patreon",
-      "url": "https://patreon.com/MathborosNexus",
-      "svg_path": "img/patreon.svg"
-    },
+
     {
       "label": "Linkedin",
       "url": "https://www.linkedin.com/in/diegolinares117/",
@@ -26,7 +21,7 @@
       "svg_path": "img/fiverr2.svg"
     }
   ],
-  
+
     "work_experience": [
       {
         "company": "Lviv Polytechnic National University",
@@ -94,7 +89,7 @@
         "highlights": []
       }
     ],
-  
+
   "projects": [
     {
       "title": "Animation projects with python",
