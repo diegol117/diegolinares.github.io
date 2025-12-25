@@ -1,146 +1,13 @@
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <style>
-    :root {
-        --primary-color: #2c3e50;
-        --secondary-color: #3498db;
-        --accent-color: #1abc9c;
-        --text-color: #333;
-        --light-gray: #f8f9fa;
-        --border-color: #e1e5eb;
-        --transition-speed: 0.3s;
-    }
-
-    body {
-        font-family: 'Open Sans', sans-serif;
-        color: var(--text-color);
-        line-height: 1.6;
-    }
-
-    a:not(.nav-link):not(.tab-link):not(.navbar-brand):not(.js-scroll-trigger) {
-        color: #007bff !important;
-        text-decoration: none;
-        transition: color var(--transition-speed);
-        font-weight: 500;
-    }
-
-    a:not(.nav-link):not(.tab-link):not(.navbar-brand):not(.js-scroll-trigger):hover {
-        color: #0056b3 !important;
-        text-decoration: underline;
-    }
-
-    .tab-content a {
-        color: #007bff !important;
-        text-decoration: none;
-        border-bottom: 1px solid transparent;
-        padding-bottom: 1px;
-        transition: all var(--transition-speed);
-    }
-
-    .tab-content a:hover {
-        color: #0056b3 !important;
-        border-bottom-color: #0056b3;
-        text-decoration: none;
-    }
-
-    .main-tabs {
-        margin-top: 30px;
-        border-bottom: 2px solid var(--border-color);
-        background: linear-gradient(to bottom, var(--light-gray), white);
-        padding: 0 15px;
-        border-radius: 10px 10px 0 0;
-        box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    }
-
-    .main-tabs .nav-item {
-        margin-bottom: -2px;
-        position: relative;
-    }
-
-    .main-tabs .nav-link {
-        color: var(--primary-color);
-        font-weight: 600;
-        padding: 1rem 2rem;
-        border: none;
-        background: transparent;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: all var(--transition-speed);
-        position: relative;
-        border-radius: 8px 8px 0 0;
-        margin: 0 5px;
-        letter-spacing: 0.3px;
-    }
-
-    .main-tabs .nav-link:hover {
-        color: var(--secondary-color);
-        background: rgba(52, 152, 219, 0.08);
-        transform: translateY(-2px);
-    }
-
-    .main-tabs .nav-link.active {
-        color: var(--secondary-color);
-        background: white;
-        border: 2px solid var(--border-color);
-        border-bottom: 2px solid white;
-        box-shadow: 0 -3px 10px rgba(0,0,0,0.05);
-        z-index: 10;
-    }
-
-    .main-tabs .nav-link.active::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-        border-radius: 2px;
-    }
-
-    .tab-content {
-        padding: 40px;
-        background-color: white;
-        min-height: 70vh;
-        border-radius: 0 0 10px 10px;
-        box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-        border: 2px solid var(--border-color);
-        border-top: none;
-        animation: fadeIn 0.5s ease-out;
-    }
-
-    .tab-pane {
-        display: none;
-        animation: fadeIn 0.5s ease-out;
-    }
-
-    .tab-pane.active {
-        display: block;
-        animation: slideIn 0.4s ease-out;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
     .subheading-custom {
         font-family: 'Georgia', 'Times New Roman', serif;
         font-weight: 500;
@@ -148,107 +15,40 @@
         font-size: 1.1rem;
     }
 
+    /* O para todos los subheadings con clase .subheading */
     .subheading {
         font-family: 'Arial', sans-serif !important;
         font-weight: 600;
-        color: var(--primary-color);
-        padding-bottom: 10px;
-        border-bottom: 2px solid var(--accent-color);
-        margin-bottom: 25px;
-        position: relative;
+        color: #333;
     }
 
-    .subheading::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 60px;
-        height: 2px;
-        background: var(--secondary-color);
-    }
-
-    .container-fluid {
-        margin-left: 250px;
-        padding: 30px;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        min-height: 100vh;
-    }
-
-    @media (max-width: 992px) {
-        .container-fluid {
-            margin-left: 0;
-            margin-top: 60px;
-            padding: 20px;
-        }
-
-        .main-tabs .nav-link {
-            padding: 0.75rem 1rem;
-            font-size: 1rem;
-        }
-
-        .tab-content {
-            padding: 25px 20px;
-        }
-    }
-
-    .research-item, .publication-item {
-        padding: 20px;
-        margin-bottom: 20px;
-        border-left: 4px solid transparent;
-        border-radius: 8px;
-        transition: all var(--transition-speed);
-        background: white;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    .research-item:hover, .publication-item:hover {
-        border-left-color: var(--secondary-color);
-        transform: translateX(5px);
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-
-    .btn-modern {
-        background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-        color: white;
-        border: none;
-        padding: 10px 25px;
-        border-radius: 25px;
-        font-weight: 600;
-        transition: all var(--transition-speed);
-        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-    }
-
-    .btn-modern:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
-        color: white;
-    }
     </style>
+    <title>Diego Linares - Github Page</title>
 
-    <title>Kathryn Vasilaky - Associate Professor of Economics</title>
-
+    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
     <link href="css/resume.min.css" rel="stylesheet">
 
   </head>
 
   <body id="page-top">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Kathryn Vasilaky</span>
-        <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile mx-auto mb-2" src="img/profile.jpeg" alt="Profile">
-        </span>
-      </a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+<a class="navbar-brand js-scroll-trigger" href="#page-top">
+  <span class="d-block d-lg-none">Start Bootstrap</span>
+  <span class="d-none d-lg-block">
+    <img class="img-fluid img-profile mx-auto mb-2" src="img/profile1.jpg" alt="Profile">
+  </span>
+</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -256,81 +56,89 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link tab-link active" href="#" data-tab="Bio">Bio</a>
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link tab-link" href="#" data-tab="Research">Research</a>
+            <a class="nav-link js-scroll-trigger" href="#teaching">Professional Experience</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link tab-link" href="#" data-tab="grants-fieldwork">Grants & Field Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link tab-link" href="#" data-tab="teaching">Teaching</a>
+            <a class="nav-link js-scroll-trigger" href="#publications">Education</a>
           </li>
 
-<li class="nav-item cv-menu-item">
-  <a class="nav-link cv-badge-link" href="CV1.pdf" target="_blank" download>
-    <span class="cv-badge">
-      <i class="fas fa-file-alt mr-2"></i>
-      CV
-      <small class="ml-2">PDF</small>
-    </span>
-  </a>
-</li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#media-features">Media Features</a>
+          </li>
         </ul>
       </div>
     </nav>
 
-
     <div class="container-fluid p-0">
 
-      <div class="main-tabs">
-        <ul class="nav nav-tabs" id="mainTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="bio-tab" data-tab-target="Bio" type="button">Bio</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="research-tab" data-tab-target="Research" type="button">Research</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="grants-tab" data-tab-target="grants-fieldwork" type="button">Grants & Field Experience</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="teaching-tab" data-tab-target="teaching" type="button">Teaching</button>
-          </li>
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0">Diego
+            <span class="text-primary">Linares</span>
+          </h1>
+  <br> <!-- más espacio vertical -->
+<div class="subheading mb-5" style="line-height: 0.9;">
+  Mathematician
+</div>
+  <br> <!-- más espacio vertical -->
+  <br> <!-- más espacio vertical -->
+<p class="mb-4 text-justify">
+I am a mathematician with a strong focus on applied mathematics, data analysis, and
+scientific computing. My academic background is grounded in Probability Theory,
+Statistical Inference, Linear Regression, and Numerical Analysis, with practical
+applications in data science and algorithmic modeling.
+</p>
 
-        </ul>
-      </div>
+<p class="mb-4 text-justify">
+I currently work as a Python Engineer and Data Analyst, developing mathematical
+visualizations, data-driven tools, and analytical solutions using Python, LaTeX,
+and scientific libraries such as NumPy, Matplotlib, and Manim. My work bridges
+theoretical rigor with clear communication of complex quantitative ideas.
+</p>
 
-      <div class="tab-content" id="mainTabContent">
+<p class="mb-4 text-justify">
+I hold a
+<a href="http://portal.facyt.uc.edu.ve/investigacion/lineas_m.html" target="_blank">
+Licentiate Degree in Mathematics
+</a>
+from the
+<a href="http://www.uc.edu.ve/" target="_blank">
+University of Carabobo,
+</a> where I also served as a Teaching Assistant and Academic Assistant in
+Analytical Geometry, supporting instruction in pre-calculus, algebra, and
+foundational mathematics for science and engineering students.
+</p>
 
-        <div class="tab-pane active" id="Bio" role="tabpanel">
-          <section class="resume-section p-3 p-lg-5 d-flex d-column">
-            <div class="my-auto">
-              <h1 class="mb-0">Kathryn
-                <span class="text-primary">Vasilaky</span>
-              </h1>
-              <br>
-              <div class="subheading mb-5" style="line-height: 0.25;">
-                Associate Professor of Economics
-              </div>
+<p class="mb-5 text-justify">
+Beyond formal roles, I have experience in academic advising, technical translation,
+and web development for academic and research-oriented projects. I am particularly
+interested in numerical methods for nonlinear equations, statistical modeling,
+and the effective visualization of mathematical concepts for education and research.
+You can find professional references and additional information about my work on my
+<a href="https://www.linkedin.com/in/diegolinares117/" target="_blank">
+LinkedIn profile
+</a>.
 
-              <p class="mb-4 text-justify">I am an <a href="https://orfalea.calpoly.edu/Bio-us/directory/katya-vasilaky/">Associate Professor</a> at the Department of Economics and Faculty Affiliate at the <a href="https://noyce.calpoly.edu/">Noyce School of Applied Computing</a>, Cal Poly. I'm also a Research Affiliate at the <a href="https://people.climate.columbia.edu/users/profile/kathryn-n-vasilaky">Climate School</a> at Columbia University, Faculty Affiliate at <a href="https://cega.berkeley.edu/">CEGA</a>, UC Berkeley, an Invited Researcher at the
-              <a href="https://www.povertyactionlab.org/">Abdul Latif Jameel Poverty Action Lab, MIT</a>, and a member of the <a href="https://www.innovationgrowthlab.org/Bio/research-network/people">Innovation Growth Lab</a>.</p>
+    <div style="text-align: center; margin: 30px 0;">
+      <img src="img/teach1.jpg" alt="Professional Work" class="field-photo"
+           style="max-width: 70%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+    </div>
 
-              <p class="mb-4 text-justify">As a development economist, my work examines how groups, networks, and gender dynamics influence information exchange and technology adoption, with a focus on agriculture across Sub-Saharan Africa, India, Central America, the US, and Ukraine. Additionally, I work at the intersection of computer science and economics, investigating how selection biases in data impact machine learning and recommendation algorithms.</p>
+</p>
 
-              <p class="mb-4 text-justify">I hold a Ph.D. from the University of Maryland and a B.A. from Columbia University.</p>
-              <p class="mb-5 text-justify">
-                Beyond academia, I am a co-founder of <a href="http://www.groundtruthdata.com/">Ground Truth Data</a>, a startup focused on granular weather sensing, and I co-run <a href="https://www.meetup.com/PydataSLO/">PyData SLO</a>. My diverse interests include volunteering with <a href="https://wwoof.net/">WWOOF</a>, teaching for <a href="https://girlswhocode.com">Girls Who Code</a>, and contributing to <a href="https://econ4ua.org/">Economists for Ukraine</a>. In a previous life, I was a professional ballet dancer with the <a href="https://www.sfballet.org/">San Francisco Ballet</a> company, and today I stay creative through improvised theater.
-              </p>
 
+          <ul class="list-inline list-social-icons mb-0">
+
+<!-- Upwork (SVG) -->
 <li class="list-inline-item">
-  <a href="https://www.linkedin.com/in/kathrynvasilaky" target="_blank" rel="noopener noreferrer" title="Linkedin Profile">
+  <a href="https://www.linkedin.com/in/diegolinares117/" target="_blank" rel="noopener noreferrer" title="Linkedin Profile">
     <span class="fa-stack fa-lg">
       <i class="fa fa-circle fa-stack-2x"></i>
       <img
-        src="img/linkedin-icon.svg"
+        src="img/linkedin-ico.svg"
         alt="Linkedin"
         class="fa-stack-1x svg-icon"
       >
@@ -338,610 +146,461 @@
   </a>
 </li>
 
-              <ul class="list-inline list-social-icons mb-0">
+<!-- Fiverr (SVG) -->
+<li class="list-inline-item">
+  <a href="https://www.fiverr.com/diegolinares" target="_blank" rel="noopener noreferrer" title="Fiverr Profile">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <img
+        src="img/fiverr.png"
+        alt="Fiverr"
+        class="fa-stack-1x svg-icon"
+      >
+    </span>
+  </a>
+</li>
+
+<!-- Upwork (SVG) -->
+<li class="list-inline-item">
+  <a href="https://www.upwork.com/freelancers/diegol25" target="_blank" rel="noopener noreferrer" title="Upwork Profile">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <img
+        src="img/upwork-icon.svg"
+        alt="Upwork"
+        class="fa-stack-1x svg-icon"
+      >
+    </span>
+  </a>
+</li>
+
+<!-- Google Scholar (SVG) -->
+<li class="list-inline-item">
+  <a href="https://scholar.google.co.ve/citations?hl=es&user=8VQK9UcAAAAJ" target="_blank" rel="noopener noreferrer" title="Google Scholar Profile">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <img
+        src="img/scholar.svg"
+        alt="Google Scholar"
+        class="fa-stack-1x svg-icon"
+      >
+    </span>
+  </a>
+</li>
+
+<!-- ORCID (SVG) -->
+<li class="list-inline-item">
+  <a href="https://orcid.org/0009-0003-5912-0066" target="_blank" rel="noopener noreferrer" title="ORCID Profile">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <img
+        src="img/orcid.png"
+        alt="ORCID"
+        class="fa-stack-1x svg-icon"
+      >
+    </span>
+  </a>
+</li>
+
+<!-- ResearchGate (SVG) -->
+<li class="list-inline-item">
+  <a href="https://www.researchgate.net/profile/Diego-Linares-7" target="_blank" rel="noopener noreferrer" title="ResearchGate Profile">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <img
+        src="img/research.svg"
+        alt="ResearchGate"
+        class="fa-stack-1x svg-icon"
+      >
+    </span>
+  </a>
+</li>
 
 
-              </ul>
-            </div>
-          </section>
-        </div>
+        <a class="media-btn" href="mailto:diegolinares117@gmail.com" target="_blank">
+    Contact Me
+        </a>
 
-
-<div class="tab-pane" id="Research" role="tabpanel">
-  <section class="resume-section p-3 p-lg-5 d-flex flex-column">
-    <div class="my-auto">
-      <h2 class="mb-5">Research</h2>
-
-      <h3 class="mb-4">Peer-Reviewed Research</h3>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Baul, T., Karlan, D., Toyama, K., Vasilaky, K.</strong>
-          <a href="https://doi.org/10.1016/j.jdeveco.2024.103267" target="_blank">
-            Improving Smallholder Agriculture via Video-Based Group Extension
-          </a>
-          (2024). <em>Journal of Development Economics</em>, 169.
-          <br />
-          <a href="https://voxdev.org/topic/agriculture/effective-agricultural-advice-scale-evidence-india" target="_blank">VoxDev Coverage</a> ·
-          <a href="https://www.povertyactionlab.org/evaluation/video-based-group-extension-women-farmers-india-0" target="_blank">JPAL Summary</a> ·
-          <a href="https://www.povertyactionlab.org/case-study/video-based-support-small-scale-farmers-around-world?" target="_blank">JPAL Insights</a>
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Flory, J., Leonard, K., Tsaneva, M., Vasilaky, K.</strong>
-          <a href="https://authors.elsevier.com/sd/article/S0167-2681(23)00377-3" target="_blank">
-            How social structure shapes female competition throughout her lifetime
-          </a>
-          (2023). <em>Journal of Economic Behavior & Organization</em>, 216, 433-456.
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Vasilaky, K., Harou, A., Alfredo, K., Kapur, I.</strong>
-          <a href="https://authors.elsevier.com/sd/article/S0095-0696(23)00020-7" target="_blank">
-            What works for water conservation? Evidence from a field experiment in India
-          </a>
-          (2023). <em>Journal of Environmental Economics and Management</em>, 119.
-          <br />
-          <a href="https://blogs.worldbank.org/water/what-works-water-conservation-insights-study-haryana-india" target="_blank">World Bank Coverage</a>
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Hamilton, S., Richards, T., Shafran, A., Vasilaky, K.</strong>
-          <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/ajae.12273" target="_blank">
-            Farm labor productivity and the impact of mechanization
-          </a>
-          (2022). <em>American Journal of Agricultural Economics</em>, 104(4), 1435-1459.
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Ovaisi, Z., Vasilaky, K., Zheleva, E.</strong>
-          <a href="https://dl.acm.org/doi/abs/10.1145/3404835.3463097" target="_blank">
-            Propensity-independent Bias Recovery in Offline Learning-to-rank Systems
-          </a>
-          (2021). <em>44th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR)</em>.
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Vasilaky, K., Brock, M.</strong>
-          <a href="https://doi.org/10.1007/s40881-020-00090-5" target="_blank">
-            Power(ful) Guidelines for Experimental Economists
-          </a>
-          (2020). <em>Journal of the Experimental Science Association</em>, 6, 189–212.
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Ovaisi, Z., Ahsan, R., Zhang, Y., Vasilaky, K., Zheleva, E.</strong>
-          <a href="https://www.semanticscholar.org/paper/Correcting-for-Selection-Bias-in-Learning-to-rank-Ovaisi-Ahsan/dd18602ba7d8f697d21cd9af7e577ab2f15c0004" target="_blank">
-            Correcting for Selection Bias in Learning-to-rank Systems
-          </a>
-          (2020). <em>Proceedings of the 2020 World Wide Web Conference (WWW/WebConf)</em>.
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Enenkel, M., Brown, M.E., Vogt, J.V., McCarty, J.L., Bell, A.R., Guha-Sapir, D., Dorigo, W.A., Vasilaky, K., Svoboda, M., Bonifacio, R., Voigt, S., Anderson, M., Funk, C., Osgood, D.E., Hain, C., Vinck, P.</strong>
-          <a href="https://link.springer.com/article/10.1007/s10584-020-02878-0?wt_mc=Internal.Event.1.SEM.ArticleAuthorOnlineFirst" target="_blank">
-            Why predict climate hazards if we need to understand impacts? Mobile technologies could put humans back into the equation
-          </a>
-          (2020). <em>Climatic Change</em>.
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Buehren, N., Goldstein, M., Leonard, K., Montalvao, J., Vasilaky, K.</strong>
-          <a href="https://www.journals.uchicago.edu/doi/10.1086/713882" target="_blank">
-            Spillover Effects of Girls' Empowerment on Brothers' Competitiveness: Evidence from a Lab-in-the-Field Experiment in Uganda
-          </a>
-          (2020). <em>Economic Development and Cultural Change</em>, 70(2).
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Vasilaky, K., Martínez Sáez, S., Stanimirova, R., Osgood, D.</strong>
-          <a href="https://www.mdpi.com/2073-4336/11/1/15" target="_blank">
-            Perceptions of Farm Size Heterogeneity and Demand for Group Index Insurance
-          </a>
-          (2020). <em>Games</em>.
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Vasilaky, K., Diro, R., Norton, M., McCarnery, G., Osgood, D.</strong>
-          <a href="https://www.tandfonline.com/doi/abs/10.1080/00220388.2018.1554207" target="_blank">
-            Can Education Unlock Scale? The Demand Impact of Educational Games on a Large-Scale Unsubsidised Index Insurance Programme in Ethiopia
-          </a>
-          (2019). <em>Journal of Development Studies</em>, 56(2), 361-383.
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Vasilaky, K., Leonard, K.</strong>
-          <a href="https://www.journals.uchicago.edu/doi/10.1086/697430" target="_blank">
-            As Good as the Networks They Keep?: Improving Outcomes through Weak Ties in Uganda
-          </a>
-          (2018). <em>Economic Development and Cultural Change</em>, 66(4), 755-792.
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Vasilaky, K., Islam, A.</strong>
-          <a href="https://www.sciencedirect.com/science/article/pii/S0305750X17303479" target="_blank">
-            By Team or By Tournament? Incentives for Sharing Information in an Experimental Game
-          </a>
-          (2018). <em>World Development</em>, 103, 216-225.
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Vasilaky, K.</strong>
-          <a href="https://academic.oup.com/ajae/article-abstract/95/2/376/70881?redirectedFrom=fulltext" target="_blank">
-            Female Social Networks and Farmer Training: Can Randomized Information Exchange Improve Outcomes?
-          </a>
-          (2013). <em>American Journal of Agricultural Economics</em>, 95(2), 376-383.
-        </p>
-      </div>
-
-      <div class="resume-item mb-4">
-        <p>
-          <strong>Haack, R.A., Britton, K.O., Brockerhoff, E.G., Cavey, J.F., Garrett, L.J., Kimberley, M., Lowenstein, F., Nuding, A., Olson, L.J., Turner, J., Vasilaky, K.N.</strong>
-          Effectiveness of the International Phytosanitary Standard ISPM No. 15 (2014). <em>PLoS ONE</em>, 9(5).
-        </p>
-      </div>
-
-      <h3 class="mt-5 mb-4">Working Papers</h3>
-
-      <div class="resume-item mb-3">
-        <p>
-          <strong>Klymak, M., Kosenko, A., Korenok, O., Mykhailyshyna, D., Vasilaky, K.</strong>
-          Charitable Giving During the War. <em>2025 CSAE Working Paper Series</em>.
-          <br />
-          <a href="https://ora.ox.ac.uk/objects/uuid:3b318155-eaa7-4d3d-90a8-7691e59d6942" target="_blank">Working Paper</a> ·
-          <a href="https://cepr.org/voxeu/columns/charitable-giving-wartime-evidence-ukraines-war-fundraising" target="_blank">VoxEU Coverage</a>
-        </p>
-      </div>
-
-      <div class="resume-item mb-3">
-        <p>
-          <strong>Brock, J.M., Vasilaky, K.</strong>
-          Does Background Uncertainty Narrow the Gender Competition Gap? <em>Under Review</em>.
-        </p>
-      </div>
-
-      <div class="resume-item mb-3">
-        <p>
-          <strong>Aubrac, C., Magomba, C., Balasubramanya, S., Vasilaky, K.</strong>
-          Realized and Elicited Cooperation Under Water Scarcity: Evidence from a Field Experiment in Tanzania. <em>Under Review</em>.
-        </p>
-      </div>
-
-      <div class="resume-item mb-3">
-        <p>
-          <strong>Vasilaky, K., Shafran, A.</strong>
-          Intraday Farm Productivity Bonuses and Their Peer Effects: Evidence from a Field Experiment. <em>Under Review</em>.
-        </p>
-      </div>
-
-      <div class="resume-item mb-3">
-        <p>
-          <strong>Vasilaky, K.</strong>
-          A Generalized Ridge Regression Using an Iterative Solution: The Inverse Problem in Regression Analysis with a Stopping Rule, Columbia University.
-          <br />
-          <a href="http://academiccommons.columbia.edu/catalog/ac%3A194857" target="_blank">Working Paper</a> ·
-          <a href="https://github.com/kathrynthegreat/InverseProblem" target="_blank">Git Repo</a>
-        </p>
-      </div>
-
-      <div class="resume-item mb-3">
-        <p>
-          <strong>Harou, A., Lee, C.-Y., Osgood, D., Vasilaky, K.</strong>
-          Measuring the Impact of Timely Disaster Response in the Philippines Using Weather Extremes. <em>Working Paper</em>.
-        </p>
-      </div>
-
-      <h3 class="mt-5 mb-4">Unpublished Papers</h3>
-
-      <div class="resume-item mb-3">
-        <p>
-          <strong>Shirley, K., Vasilaky, K., Greatrex, H., Osgood, D.</strong>
-          A Hierarchical Bayesian Model of Weather Prediction with Multiple Time Series, Earth Institute, Columbia University.
-          <br />
-          <a href="http://academiccommons.columbia.edu/catalog/ac%3A199595" target="_blank">Working Paper</a> (2016)
-        </p>
-      </div>
-
-      <div class="resume-item mb-3">
-        <p>
-          <strong>Hill, R., Mejía-Mantilla, C., Vasilaky, K.</strong>
-          Vanishing Returns? Potential Returns and Constraints to Input Adoption among Smallholder Farmers in Uganda. World Bank Research Paper Vol. 1, No. 8627.
-          <br />
-          <a href="http://documents.worldbank.org/curated/en/726321540832524595/Vanishing-Returns-Potential-Returns-and-Constraints-to-Input-Adoption-among-Smallholder-Farmers-in-Uganda" target="_blank">R&R</a>
-        </p>
-      </div>
-
-      <h3 class="mt-5 mb-4">Reports & Policy Briefs</h3>
-
-      <div class="resume-item mb-3">
-        <p>
-          <strong>Vasilaky, K., Leonard, K.</strong>
-          Improving Social Networks for Ugandan Farmers (2016).
-          <br />
-          <a href="http://www.worldbank.org/en/programs/africa-gender-innovation-lab/brief/improving-social-networks-for-ugandan-farmers#" target="_blank">World Bank Policy Brief</a>
-        </p>
-      </div>
-
-      <div class="resume-item mb-3">
-        <p>
-          <strong>Buehren, N., Goldstein, M., Leonard, K., Montalvao, J., Vasilaky, K.</strong>
-          <a href="http://documents.worldbank.org/curated/en/743031468186845532/Womens-empowerment-sibling-rivalry-and-competitiveness-evidence-from-a-lab-experiment-and-a-randomized-control-trial-in-Uganda" target="_blank">
-            World Bank Report Number WPS7699
-          </a>
-        </p>
-      </div>
-
-      <div class="resume-item mb-3">
-        <p>
-          <strong>Vasilaky, K.</strong>
-          Єдиний Економічний Простір: Наслідки для України (2004).
-          <br />
-          <a href="https://github.com/kathrynthegreat/kathrynthegreat.github.io/blob/master/NTSH130.pdf" target="_blank">Shevchenko Scientific Society</a>
-        </p>
-      </div>
-
-    </div>
-  </section>
-</div>
-<div class="tab-pane" id="grants-fieldwork" role="tabpanel">
-  <section class="resume-section p-3 p-lg-5 d-flex flex-column">
-    <div class="my-auto">
-      <h2 class="mb-5">Grants & Field Experience</h2>
-
-      <h3 class="section-subtitle">Grants</h3>
-
-      <ul class="cv-list">
-        <li>
-          <strong>Principal Investigator</strong>, Innovations for Poverty Action —
-          <a href="https://www.povertyactionlab.org/initiative-project/war-identity-and-its-economic-consequences-ukraine" target="_blank">
-            War, Identity and its Economic Consequences in Ukraine
-          </a>,
-          <span class="cv-meta">$9,961 · 2025–2026</span>
-        </li>
-
-        <li>
-          <strong>Principal Investigator</strong>, RSCA, Cal Poly — Addressing Prediction Biases in Agricultural Yields with Remote Sensing,
-          <span class="cv-meta">$12,500 · 2025–2026</span>
-        </li>
-
-        <li>
-          <strong>Principal Investigator</strong>, Noyce School of Computing, Cal Poly — Selection Bias in Learning to Rank,
-          <span class="cv-meta">$14,000 · 2023–2024</span>
-        </li>
-
-        <li>
-          <strong>Co-Principal Investigator</strong>, RSCA, Cal Poly — Nudging Women into Business and Economics,
-          <span class="cv-meta">$18,000 · 2021–2022</span>
-        </li>
-
-        <li>
-          <strong>Co-Principal Investigator</strong>, USDA — Immigration Reform and Farm Labor Shortages,
-          <span class="cv-meta">$500,000 · 2019–2021</span>
-        </li>
-
-        <li>
-          <strong>Principal Investigator</strong>, RSCA, Cal Poly — Correcting for Algorithmic Confounding Bias,
-          <span class="cv-meta">$8,985 · 2019–2020</span>
-        </li>
-
-        <li>
-          <strong>Co-Principal Investigator</strong>, Bill & Melinda Gates Foundation —
-          <a href="http://gcgh.grandchallenges.org/grant/multimodal-satellite-rainfall-measurement-index-insurance" target="_blank">
-            Multimodal Satellite Rainfall Measurement for Index Insurance
-          </a>,
-          <span class="cv-meta">$100,000 · 2016–2018</span>
-        </li>
-
-        <li>
-          <strong>Co-Principal Investigator</strong>, World Bank / IFC — Evaluating the Timeliness of Disaster Response,
-          <span class="cv-meta">$200,000 · 2015–2017</span>
-        </li>
-
-        <li>
-          <strong>Principal Investigator</strong>, Columbia University — SMS-Based System for Rainfall Reports,
-          <span class="cv-meta">$31,000 · 2015–2017</span>
-        </li>
-
-        <li>
-          <strong>Principal Investigator</strong>, Columbia University — Groundwater Depletion in Northern India,
-          <span class="cv-meta">$32,000 · 2014–2016</span>
-        </li>
-
-        <li>
-          <strong>PhD Thesis Funding</strong>, World Bank DECRG — Weak Ties and Technology Adoption,
-          <span class="cv-meta">$20,000 · 2009–2010</span>
-        </li>
-      </ul>
-<div class="photo-container">
-  <div class="photo-item">
-    <img src="img/background.jpg" alt="" class="field-photo" style="width: 100%; max-width: 800px; height: auto;">
-  </div>
-</div>
-      <h3 class="section-subtitle mt-5">Field Work</h3>
-
-      <ul class="cv-list">
-        <li>Central Coast (California) — Immigration Reform and Farm Labor Shortages (USDA), <span class="cv-meta">2020</span></li>
-        <li>India (Maharashtra) — Satellite Rainfall Measurement for Index Insurance, <span class="cv-meta">2016–2017</span></li>
-        <li>Dominican Republic — Group Insurance and Informal Networks, <span class="cv-meta">2014 & 2016</span></li>
-        <li>Philippines (Manila) — Disaster Response and Poverty, <span class="cv-meta">2015</span></li>
-        <li>India (Punjab & Haryana) — Water Measurement and Savings, <span class="cv-meta">2015–2016</span></li>
-        <li>Senegal & Honduras — Group Size and Index Insurance, <span class="cv-meta">2015</span></li>
-        <li>Indonesia (Indramayu) — Weather Uncertainty & Index Insurance, <span class="cv-meta">2014</span></li>
-        <li>India (Bihar) — Video-Based Agricultural Extension, <span class="cv-meta">2014–2015</span></li>
-        <li>Ethiopia — Weather Index Insurance, <span class="cv-meta">2013</span></li>
-        <li>Uganda — Female Adolescent Outcomes, <span class="cv-meta">2012</span></li>
-        <li>Malawi — Gender & Competition in Villages, <span class="cv-meta">2011</span></li>
-        <li>Uganda — Malaria Diagnosis Feasibility, <span class="cv-meta">2009–2010</span></li>
-        <li>Tanzania — Markets for Cotton By-Products, <span class="cv-meta">2009</span></li>
-      </ul>
-
-      <h3 class="section-subtitle mt-5">Field Work Photos</h3>
-
-      <div class="photo-container">
-        <div class="photo-item">
-          <img src="img/1.JPG" alt="" class="field-photo">
-        </div>
-        <div class="photo-item">
-          <img src="img/2.jpg" alt="" class="field-photo">
-        </div>
-        <div class="photo-item">
-          <img src="img/3.jpg" alt="" class="field-photo">
-        </div>
-      </div>
-
-      <h3 class="section-subtitle mt-5">Personal Field Work</h3>
-
-      <p class="cv-paragraph">
-        I actively farm internationally through
-        <a href="https://wwoof.es/" target="_blank">WWOOF</a>
-        and as a farm lead for
-        <a href="https://www.firstfruitsslo.org/" target="_blank">First Fruits Farm</a>
-        in San Luis Obispo, CA.
-      </p>
-
-      <ul class="cv-list">
-        <li>Spain (Nieva) — WWOOF Spain, <span class="cv-meta">2019</span></li>
-        <li>France (Cauterets) — WWOOF France, <span class="cv-meta">2017</span></li>
-        <li>France (Dordogne) — WWOOF France, <span class="cv-meta">2016</span></li>
-        <li>Canada (Gaspé) — WWOOF Canada, <span class="cv-meta">2007</span></li>
-      </ul>
-
-    </div>
-  </section>
-</div>
-
-<div class="tab-pane" id="teaching" role="tabpanel">
-  <section class="resume-section p-3 p-lg-5">
-    <div class="my-auto">
-      <h2 class="mb-5 section-title">Teaching Experience</h2>
-
-      <div class="resume-block">
-        <h3 class="block-title">University Courses</h3>
-
-        <div class="teaching-item">
-          <div class="item-header">
-            <h4 class="item-title">
-              <a href="https://www.cere.se/en/machine-learning-for-causal-inference-course-taught-at-cere-by-katya-vasilaky-and-eduardo-zambrano-of-cal-poly/">
-                PhD Course on Machine Learning for Causal Inference
-              </a>
-            </h4>
-            <span class="item-date">Sept 11–15, 2023</span>
-          </div>
-          <div class="subheading-custom">
-            Centre for Environmental and Resource Economics · Swedish University of Agricultural Sciences
-          </div>
-          <ul class="item-details">
-            <li>Weeklong intensive course</li>
-            <li>Co-taught with <a href="https://eduardo-zambrano.github.io/">Eduardo Zambrano</a></li>
           </ul>
         </div>
+      </section>
 
-        <div class="teaching-item">
-          <div class="item-header">
-            <h4 class="item-title">Economics 552: Causal Inference for Machine Learning</h4>
-            <span class="item-date">Spring 2022 – Present</span>
-          </div>
-          <div class="subheading-custom">Cal Poly · Department of Economics</div>
-        </div>
 
-        <div class="teaching-item">
-          <div class="item-header">
-            <h4 class="item-title">Economics 580: Special Projects with World Bank</h4>
-            <span class="item-date">Spring 2021 – Present</span>
-          </div>
-          <div class="subheading-custom">Cal Poly · Department of Economics</div>
-        </div>
 
-        <div class="teaching-item">
-          <div class="item-header">
-            <h4 class="item-title">Economics 395: Programming for Economics and Analytics</h4>
-            <span class="item-date">Spring 2017 – Present</span>
-          </div>
-          <div class="subheading-custom">Cal Poly · Department of Economics</div>
-        </div>
 
-        <div class="teaching-item">
-          <div class="item-header">
-            <h4 class="item-title">Economics 201: Survey of Economics</h4>
-            <span class="item-date">Winter 2017 – Present</span>
-          </div>
-          <div class="subheading-custom">Cal Poly · Department of Economics</div>
-        </div>
 
-        <div class="teaching-item">
-          <div class="item-header">
-            <h4 class="item-title">SDEV W2300: Challenges of Sustainable Development</h4>
-            <span class="item-date">Spring 2016</span>
-          </div>
-          <div class="subheading-custom">Columbia University · Earth Institute</div>
-          <div class="item-meta">Co-instructor with Joel Cohen and Jason Wong</div>
-        </div>
+<section class="resume-section p-3 p-lg-5" id="teaching">
+  <div class="my-auto">
 
-        <div class="teaching-item">
-          <div class="item-header">
-            <h4 class="item-title">Intermediate Statistics</h4>
-            <span class="item-date">Spring 2011</span>
-          </div>
-          <div class="subheading-custom">U.S. Naval Academy · Annapolis, MD</div>
+    <h2 class="mb-5 section-title">Professional Experience</h2>
+
+
+    <!-- ===================== -->
+    <!-- SOFTWARE & DATA ROLES -->
+    <!-- ===================== -->
+    <div class="resume-block">
+      <h3 class="block-title">Software Engineering & Data Science</h3>
+
+      <div class="teaching-item">
+        <div class="item-header">
+          <h4 class="item-title">Python Engineer</h4>
+          <span class="item-date">Dec 2025 – Present</span>
         </div>
+        <div class="subheading-custom">Studocu · Part-time · Remote (Germany)</div>
+        <ul class="item-details">
+          <li>Development of educational videos with voiceover on university-level mathematics topics.</li>
+        </ul>
       </div>
 
-      <div class="resume-block">
-        <h3 class="block-title">Additional Activities</h3>
-        <p class="mb-2">Guest lectures at Columbia University and teaching assistantships at the University of Maryland. I have also led several professional workshops and community tutorials on topics including Python, Flask, data science, and web scraping for organizations like NYC PyLadies, PyCon, and Statistics.com.</p>
+      <div class="teaching-item">
+        <div class="item-header">
+          <h4 class="item-title">Python Engineer</h4>
+          <span class="item-date">Dec 2024 – Present</span>
+        </div>
+        <div class="subheading-custom">Lviv Polytechnic National University · Part-time · Remote (Ukraine)</div>
+        <ul class="item-details">
+          <li>Developed and maintained complex data and concept visualization tools using Python.</li>
+          <li>Extensive use of Manim, Matplotlib, and LaTeX for mathematical and scientific visualization.</li>
+        </ul>
+      </div>
+
+      <div class="teaching-item">
+        <div class="item-header">
+          <h4 class="item-title">Data Analyst</h4>
+          <span class="item-date">Dec 2022 – Feb 2025</span>
+        </div>
+        <div class="subheading-custom">SumandoLab · Part-time · Remote (Colombia)</div>
+        <ul class="item-details">
+          <li>Visualized and communicated complex analytical results for strategic business decisions.</li>
+          <li>Supported data-driven commercial and marketing strategies.</li>
+        </ul>
+      </div>
+
+      <div class="teaching-item">
+        <div class="item-header">
+          <h4 class="item-title">Data Analyst</h4>
+          <span class="item-date">May 2023 – Nov 2023</span>
+        </div>
+        <div class="subheading-custom">University of the Balearic Islands · Temporary Contract · Remote (Spain)</div>
+        <ul class="item-details">
+          <li>Performed full statistical analysis in R for a research project on child health and language quality.</li>
+        </ul>
       </div>
     </div>
-  </section>
+
+    <!-- ===================== -->
+    <!-- WEB & DESIGN -->
+    <!-- ===================== -->
+    <div class="resume-block">
+      <h3 class="block-title">Web Development & Design</h3>
+
+      <div class="teaching-item">
+        <div class="item-header">
+          <h4 class="item-title">Senior Web Developer</h4>
+          <span class="item-date">Nov 2025 – Present</span>
+        </div>
+        <div class="subheading-custom">Fiverr · Freelance · Remote (USA)</div>
+        <ul class="item-details">
+          <li>Designed and developed professional websites and academic repositories.</li>
+          <li>Specialized in platforms for researchers and PhD-level academics.</li>
+        </ul>
+        <div class="item-meta">Skills: HTML · CSS · Jekyll</div>
+      </div>
+
+      <div class="teaching-item">
+        <div class="item-header">
+          <h4 class="item-title">Graphic Design Consultant</h4>
+          <span class="item-date">Oct 2023 – Present</span>
+        </div>
+        <div class="subheading-custom">CUTMAC · Freelance · Remote (Argentina)</div>
+        <ul class="item-details">
+          <li>Created and managed layout templates for technical manuals and documentation.</li>
+          <li>Ensured technical rigor through advanced LaTeX workflows.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- ACADEMIA & CONSULTING -->
+    <!-- ===================== -->
+    <div class="resume-block">
+      <h3 class="block-title">Academia, Translation & Consulting</h3>
+
+      <div class="teaching-item">
+        <div class="item-header">
+          <h4 class="item-title">University Professor</h4>
+          <span class="item-date">Dec 2023 – Present</span>
+        </div>
+        <div class="subheading-custom">University of Carabobo</div>
+      </div>
+
+      <div class="teaching-item">
+        <div class="item-header">
+          <h4 class="item-title">Academic Advisor</h4>
+          <span class="item-date">Jul 2025 – Oct 2025</span>
+        </div>
+        <div class="subheading-custom">Upwork · Freelance · Remote (Spain)</div>
+        <ul class="item-details">
+          <li>Provided specialized consulting for postgraduate engineering students.</li>
+          <li>Advised on Final Master’s Projects (TFM).</li>
+        </ul>
+      </div>
+
+      <div class="teaching-item">
+        <div class="item-header">
+          <h4 class="item-title">Technical Translator</h4>
+          <span class="item-date">Nov 2019 – Present</span>
+        </div>
+        <div class="subheading-custom">CUTMAC · Freelance</div>
+        <ul class="item-details">
+          <li>Technical translation of manuals, safety guides, and industrial documentation.</li>
+          <li>English to Argentine Spanish specialization.</li>
+        </ul>
+      </div>
+
+      <div class="teaching-item">
+        <div class="item-header">
+          <h4 class="item-title">Technical Translator</h4>
+          <span class="item-date">Feb 2022 – Jan 2023</span>
+        </div>
+        <div class="subheading-custom">Linguaserve · Part-time · Remote (Spain)</div>
+        <ul class="item-details">
+          <li>Translated and adapted technical content for digital and e-commerce platforms.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="publications">
+  <div class="my-auto">
+
+    <h2 class="mb-5 section-title-highlight">
+      Education, Volunteering & Publications
+    </h2>
+
+    <!-- ===================== -->
+    <!-- EDUCATION -->
+    <!-- ===================== -->
+<h3 class="section-subtitle-modern">Education</h3>
+
+<div class="resume-card accent-left">
+  <div class="card-header">
+    <h4>University of Carabobo</h4>
+    <span class="card-date">2017 – 2024</span>
+  </div>
+  <div class="card-body">
+    <p class="card-role">Licentiate Degree in Mathematics</p>
+    <p class="card-text">
+      Strong background in Probability Distributions (Normal, Binomial, Poisson),
+      Central Limit Theorem, Linear Regression, and Hypothesis Testing,
+      providing a solid foundation for Data Science and Statistical Modeling.
+    </p>
+    <div class="tag-container">
+      <span class="tag">Statistics</span>
+      <span class="tag">Probability</span>
+      <span class="tag">Linear Regression</span>
+      <span class="tag">Data Science</span>
+    </div>
+  </div>
 </div>
 
+<div class="resume-card accent-left">
+  <div class="card-header">
+    <h4>Unidad Educativa Colegio Privado Santa Rosa</h4>
+    <span class="card-date">2012 – 2017</span>
+  </div>
+  <div class="card-body">
+    <p class="card-role">High School Diploma</p>
+    <div class="tag-container">
+      <span class="tag">English</span>
+      <span class="tag">Semantic HTML</span>
+      <span class="tag">Technical Foundations</span>
+    </div>
+  </div>
+</div>
 
+    <!-- ===================== -->
+    <!-- VOLUNTEERING -->
+    <!-- ===================== -->
+    <h3 class="section-subtitle-modern mt-5">Volunteering</h3>
 
-
+    <div class="resume-card accent-left">
+      <div class="card-header">
+        <h4>Teaching Assistant</h4>
+        <span class="card-date">Oct 2021 – Oct 2023</span>
       </div>
+      <div class="card-body">
+        <p class="card-role">FACyT · University of Carabobo</p>
+        <p class="card-text">
+          Delivered instruction and academic support in Analytical Geometry,
+          covering pre-calculus fundamentals and advanced algebra topics
+          within science and technology programs.
+        </p>
+        <div class="tag-container">
+          <span class="tag">Analytical Geometry</span>
+          <span class="tag">Pre-Calculus</span>
+          <span class="tag">Algebra</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="resume-card accent-left">
+      <div class="card-header">
+        <h4>Academic Assistant</h4>
+        <span class="card-date">May 2019</span>
+      </div>
+      <div class="card-body">
+        <p class="card-role">FACyT · University of Carabobo</p>
+        <p class="card-text">
+          Ensured strict compliance with evaluation protocols and supported students
+          during academic assessments, maintaining a structured and fair environment.
+        </p>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- PUBLICATIONS -->
+    <!-- ===================== -->
+    <h3 class="section-subtitle-modern mt-5">Publications</h3>
+
+    <div class="resume-card highlight">
+      <div class="card-header">
+        <h4>
+          Dynamics of a New Family of One-Point Methods with Third-Order Convergence
+          for Solving Nonlinear Equations
+        </h4>
+        <span class="card-date">March 1, 2025</span>
+      </div>
+      <div class="card-body">
+        <p class="card-role">
+          <em>Engineering Journal, Faculty of Engineering, University of Carabobo</em>
+        </p>
+                <a class="media-btn" href="https://doi.org/10.13140/RG.2.2.29380.54401" target="_blank">
+          Read Article
+        </a>
+        <div class="tag-container">
+          <span class="tag">Numerical Analysis</span>
+          <span class="tag">Nonlinear Equations</span>
+          <span class="tag">Convergence Methods</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="media-features">
+  <div class="my-auto">
+    <h2 class="mb-5">Geometric Visualizations</h2>
+
+    <!-- Circle Area -->
+    <article class="resume-item media-item">
+      <div class="resume-content mr-auto">
+        <h3 class="mb-1">Circle Area Derivation</h3>
+        <div class="media-meta">Manim Animation · 1080p HD</div>
+        <p class="media-description">
+          Visual derivation showing how a circle's area can be calculated by dividing it into segments
+          that rearrange to form a rectangle. This geometric transformation demonstrates why
+          the area formula is πr².
+        </p>
+
+        <video
+          src="img/CircleArea.mp4"
+          controls
+          autoplay
+          loop
+          muted
+          width="70%"
+          height="auto"
+          poster="img/circlearea.jpg"
+          preload="metadata">
+          Your browser does not support HTML5 video.
+        </video>
+
+        <br><br>
+        <a class="media-btn see-more-btn" href="https://www.fiverr.com/users/diegolinares/portfolio" target="_blank">
+          See More Details
+        </a>
+      </div>
+    </article>
+
+    <!-- Triangle Area -->
+    <article class="resume-item media-item">
+      <div class="resume-content mr-auto">
+        <h3 class="mb-1">Triangle Area Visualization</h3>
+        <div class="media-meta">Manim Animation · 1080p HD</div>
+        <p class="media-description">
+          Animation demonstrating that a triangle's area equals (a+b+c)/2 × r (semiperimeter × inradius).
+          This visualization connects the triangle's sides with its inscribed circle to derive the area formula.
+        </p>
+
+        <video
+          src="img/TriangleMap.mp4"
+          controls
+          autoplay
+          loop
+          muted
+          width="70%"
+          height="auto"
+          poster="img/trianglemap.jpg"
+          preload="metadata">
+          Your browser does not support HTML5 video.
+        </video>
+
+        <br><br>
+        <a class="media-btn see-more-btn" href="https://www.fiverr.com/users/diegolinares/portfolio" target="_blank">
+          See More Details
+        </a>
+      </div>
+    </article>
+
+    <!-- Polygon/Parallelogram Area -->
+    <article class="resume-item media-item">
+      <div class="resume-content mr-auto">
+        <h3 class="mb-1">Parallelogram Area Animation</h3>
+        <div class="media-meta">Manim Animation · 1080p HD</div>
+        <p class="media-description">
+          Geometric animation showing how a parallelogram's area equals a × b × sin(θ).
+          The visualization demonstrates the relationship between sides, angles, and area
+          through transformation and decomposition.
+        </p>
+
+        <video
+          src="img/PolygonAnimation.mp4"
+          controls
+          autoplay
+          loop
+          muted
+          width="70%"
+          height="auto"
+          poster="img/polygon-thumbnail.jpg"
+          preload="metadata">
+          Your browser does not support HTML5 video.
+        </video>
+
+        <br><br>
+        <a class="media-btn see-more-btn" href="https://www.fiverr.com/users/diegolinares/portfolio" target="_blank">
+          See More Details
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+
+
 
     </div>
 
+    <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
+    <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('Script de pestañas cargado');
-
-        function switchTab(tabId) {
-          console.log('Cambiando a pestaña:', tabId);
-
-          document.querySelectorAll('.tab-pane').forEach(tab => {
-            tab.classList.remove('active');
-            tab.style.display = 'none';
-          });
-
-          const activeTab = document.getElementById(tabId);
-          if (activeTab) {
-            activeTab.classList.add('active');
-            activeTab.style.display = 'block';
-            console.log('Pestaña encontrada y activada:', tabId);
-          } else {
-            console.error('Pestaña no encontrada:', tabId);
-          }
-
-          document.querySelectorAll('.tab-link').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('data-tab') === tabId) {
-              link.classList.add('active');
-            }
-          });
-
-          document.querySelectorAll('.main-tabs .nav-link').forEach(link => {
-            link.classList.remove('active');
-            const tabTarget = link.getAttribute('data-tab-target');
-            if (tabTarget === tabId) {
-              link.classList.add('active');
-            }
-          });
-
-          if (history.pushState) {
-            history.pushState(null, null, '#' + tabId);
-          } else {
-            window.location.hash = '#' + tabId;
-          }
-        }
-
-        document.querySelectorAll('.tab-link').forEach(link => {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const tabId = this.getAttribute('data-tab');
-            console.log('Clic en sidebar, tabId:', tabId);
-            if (tabId) {
-              switchTab(tabId);
-            }
-          });
-        });
-
-        document.querySelectorAll('.main-tabs .nav-link').forEach(link => {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const tabId = this.getAttribute('data-tab-target');
-            console.log('Clic en pestaña horizontal, tabId:', tabId);
-            if (tabId) {
-              switchTab(tabId);
-            }
-          });
-        });
-
-        function initializeTab() {
-          document.querySelectorAll('.tab-pane').forEach(tab => {
-            if (tab.id !== 'Bio') {
-              tab.style.display = 'none';
-              tab.classList.remove('active');
-            }
-          });
-
-          const bioTab = document.getElementById('Bio');
-          if (bioTab) {
-            bioTab.style.display = 'block';
-            bioTab.classList.add('active');
-          }
-
-          const hash = window.location.hash.substring(1);
-          const validTabs = ['Bio', 'Research', 'grants-fieldwork', 'teaching'];
-
-          if (hash && validTabs.includes(hash)) {
-            setTimeout(() => {
-              switchTab(hash);
-            }, 100);
-          } else {
-            switchTab('Bio');
-          }
-        }
-
-        initializeTab();
-
-        window.addEventListener('popstate', function() {
-          const hash = window.location.hash.substring(1);
-          const validTabs = ['Bio', 'Research', 'grants-fieldwork', 'teaching'];
-          if (validTabs.includes(hash)) {
-            switchTab(hash);
-          }
-        });
-
-        console.log('Número de pestañas encontradas:', document.querySelectorAll('.tab-pane').length);
-        console.log('Número de enlaces de sidebar:', document.querySelectorAll('.tab-link').length);
-        console.log('Número de botones de pestañas:', document.querySelectorAll('.main-tabs .nav-link').length);
-      });
-    </script>
 
   </body>
 
