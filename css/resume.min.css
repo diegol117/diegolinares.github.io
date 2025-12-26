@@ -25,7 +25,26 @@ font-family: 'Montserrat', sans-serif;
 /* =====================
    HEADINGS
 ===================== */
+/* Fuerza a las pestañas a estar en una sola fila en móviles */
+@media (max-width: 768px) {
+    .nav-tabs {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto; /* Permite scroll horizontal si son muchas */
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
 
+    .nav-tabs .nav-item {
+        flex: 0 0 auto; /* Evita que las pestañas se encojan */
+    }
+
+    .nav-tabs .nav-link {
+        padding: 8px 12px; /* Ajusta el espacio para que quepan más */
+        font-size: 14px;   /* Texto ligeramente más pequeño en móvil */
+    }
+}
 h1, h2, h3, h4, h5, h6 {font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   color: #343a40;
