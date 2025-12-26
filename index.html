@@ -1,54 +1,254 @@
-<!DOCTYPE html>
 <html lang="en">
 
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <style>
+    :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --accent-color: #1abc9c;
+        --text-color: #333;
+        --light-gray: #f8f9fa;
+        --border-color: #e1e5eb;
+        --transition-speed: 0.3s;
+    }
+
+    body {
+font-family: 'Montserrat', sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    a:not(.nav-link):not(.tab-link):not(.navbar-brand):not(.js-scroll-trigger) {
+        color: #007bff !important;
+        text-decoration: none;
+        transition: color var(--transition-speed);
+        font-weight: 500;
+    }
+
+    a:not(.nav-link):not(.tab-link):not(.navbar-brand):not(.js-scroll-trigger):hover {
+        color: #0056b3 !important;
+        text-decoration: underline;
+    }
+
+    .tab-content a {
+        color: #007bff !important;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 1px;
+        transition: all var(--transition-speed);
+    }
+
+    .tab-content a:hover {
+        color: #0056b3 !important;
+        border-bottom-color: #0056b3;
+        text-decoration: none;
+    }
+
+    .main-tabs {
+        margin-top: 30px;
+        border-bottom: 2px solid var(--border-color);
+        background: linear-gradient(to bottom, var(--light-gray), white);
+        padding: 0 15px;
+        border-radius: 10px 10px 0 0;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    }
+
+    .main-tabs .nav-item {
+        margin-bottom: -2px;
+        position: relative;
+    }
+
+    .main-tabs .nav-link {
+        color: var(--primary-color);
+        font-weight: 600;
+        padding: 1rem 2rem;
+        border: none;
+        background: transparent;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all var(--transition-speed);
+        position: relative;
+        border-radius: 8px 8px 0 0;
+        margin: 0 5px;
+        letter-spacing: 0.3px;
+    }
+
+    .main-tabs .nav-link:hover {
+        color: var(--secondary-color);
+        background: rgba(52, 152, 219, 0.08);
+        transform: translateY(-2px);
+    }
+
+    .main-tabs .nav-link.active {
+        color: var(--secondary-color);
+        background: white;
+        border: 2px solid var(--border-color);
+        border-bottom: 2px solid white;
+        box-shadow: 0 -3px 10px rgba(0,0,0,0.05);
+        z-index: 10;
+    }
+
+    .main-tabs .nav-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        border-radius: 2px;
+    }
+
+    .tab-content {
+        padding: 40px;
+        background-color: white;
+        min-height: 70vh;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        border: 2px solid var(--border-color);
+        border-top: none;
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    .tab-pane {
+        display: none;
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    .tab-pane.active {
+        display: block;
+        animation: slideIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     .subheading-custom {
-        font-family: 'Georgia', 'Times New Roman', serif;
+font-family: 'Montserrat', sans-serif;
         font-weight: 500;
         color: #555;
         font-size: 1.1rem;
     }
 
-    /* O para todos los subheadings con clase .subheading */
     .subheading {
-        font-family: 'Arial', sans-serif !important;
+font-family: 'Montserrat', sans-serif !important;
         font-weight: 600;
-        color: #333;
+        color: var(--primary-color);
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--accent-color);
+        margin-bottom: 25px;
+        position: relative;
     }
 
-    </style>
-    <title>Diego Linares - Github Page</title>
+    .subheading::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 60px;
+        height: 2px;
+        background: var(--secondary-color);
+    }
 
-    <!-- Bootstrap core CSS -->
+    .container-fluid {
+        margin-left: 250px;
+        padding: 30px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+    }
+
+    @media (max-width: 992px) {
+        .container-fluid {
+            margin-left: 0;
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+        .main-tabs .nav-link {
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+        }
+
+        .tab-content {
+            padding: 25px 20px;
+        }
+    }
+
+    .Experience-item, .publication-item {
+        padding: 20px;
+        margin-bottom: 20px;
+        border-left: 4px solid transparent;
+        border-radius: 8px;
+        transition: all var(--transition-speed);
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .Experience-item:hover, .publication-item:hover {
+        border-left-color: var(--secondary-color);
+        transform: translateX(5px);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .btn-modern {
+        background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all var(--transition-speed);
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .btn-modern:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        color: white;
+    }
+    </style>
+
+    <title>Diego Linares - Mathematician</title>
+
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
     <link href="css/resume.min.css" rel="stylesheet">
 
   </head>
 
   <body id="page-top">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-<a class="navbar-brand js-scroll-trigger" href="#page-top">
-  <span class="d-block d-lg-none">Start Bootstrap</span>
-  <span class="d-none d-lg-block">
-    <img class="img-fluid img-profile mx-auto mb-2" src="img/profile1.jpg" alt="Profile">
-  </span>
-</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">Diego Linares</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile mx-auto mb-2" src="img/profile1.jpg" alt="Profile">
+        </span>
+      </a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -56,35 +256,70 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link tab-link active" href="#" data-tab="Bio">Bio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#teaching">Professional Experience</a>
+            <a class="nav-link tab-link" href="#" data-tab="Experience">Experience</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#publications">Education</a>
+            <a class="nav-link tab-link" href="#" data-tab="education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link tab-link" href="#" data-tab="teaching">Media Features</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#media-features">Media Features</a>
-          </li>
+<!-- Enlace para descargar el CV en formato PDF -->
+<!--
+<li class="nav-item cv-menu-item">
+  <a class="nav-link cv-badge-link" href="CV1.pdf" target="_blank" download>
+    <span class="cv-badge">
+      <i class="fas fa-file-alt mr-2"></i>
+      CV
+      <small class="ml-2">PDF</small>
+    </span>
+  </a>
+</li>
+-->
+
+
         </ul>
       </div>
     </nav>
 
+
     <div class="container-fluid p-0">
 
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="my-auto">
-          <h1 class="mb-0">Diego
-            <span class="text-primary">Linares</span>
-          </h1>
-  <br> <!-- más espacio vertical -->
-<div class="subheading mb-5" style="line-height: 0.9;">
-  Mathematician
-</div>
-  <br> <!-- más espacio vertical -->
-  <br> <!-- más espacio vertical -->
+      <div class="main-tabs">
+        <ul class="nav nav-tabs" id="mainTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="bio-tab" data-tab-target="Bio" type="button">Bio</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="Experience-tab" data-tab-target="Experience" type="button">Experience</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="grants-tab" data-tab-target="education" type="button">Education</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="teaching-tab" data-tab-target="teaching" type="button">Media Features</button>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="tab-content" id="mainTabContent">
+
+        <div class="tab-pane active" id="Bio" role="tabpanel">
+          <section class="resume-section p-3 p-lg-5 d-flex d-column">
+            <div class="my-auto">
+              <h1 class="mb-0">Diego
+                <span class="text-primary">Linares</span>
+              </h1>
+              <br>
+              <div class="subheading mb-5" style="line-height: 0.25;">
+                Mathematician
+              </div>
+
 <p class="mb-4 text-justify">
 I am a mathematician with a strong focus on applied mathematics, data analysis, and
 scientific computing. My academic background is grounded in Probability Theory,
@@ -121,6 +356,7 @@ You can find professional references and additional information about my work on
 <a href="https://www.linkedin.com/in/diegolinares117/" target="_blank">
 LinkedIn profile
 </a>.
+
 
     <div style="text-align: center; margin: 30px 0;">
       <img src="img/teach1.jpg" alt="Professional Work" class="field-photo"
@@ -202,7 +438,7 @@ LinkedIn profile
   </a>
 </li>
 
-<!-- ResearchGate (SVG) -->
+<!-- Professional ExperienceGate (SVG) -->
 <li class="list-inline-item">
   <a href="https://www.researchgate.net/profile/Diego-Linares-7" target="_blank" rel="noopener noreferrer" title="ResearchGate Profile">
     <span class="fa-stack fa-lg">
@@ -217,390 +453,816 @@ LinkedIn profile
 </li>
 
 
-        <a class="media-btn" href="mailto:diegolinares117@gmail.com" target="_blank">
-    Contact Me
-        </a>
+              <ul class="list-inline list-social-icons mb-0">
 
-          </ul>
+
+              </ul>
+            </div>
+          </section>
         </div>
-      </section>
+
+<div class="tab-pane" id="Experience" role="tabpanel">
+  <section class="resume-section">
+    <div class="resume-section-content">
+      <!-- Se copia todo el contenido de la sección teaching aquí -->
+      <div class="my-auto">
+
+        <h2 class="mb-5 section-title">Experience</h2>
 
 
+        <!-- ===================== -->
+        <!-- SOFTWARE & DATA ROLES -->
+        <!-- ===================== -->
+        <div class="resume-block">
+          <h3 class="block-title">Software Engineering & Data Science</h3>
 
+          <div class="teaching-item">
+            <div class="item-header">
+              <h4 class="item-title">Python Engineer</h4>
+              <span class="item-date">Dec 2025 – Present</span>
+            </div>
+            <div class="subheading-custom">Studocu · Part-time · Remote (Germany)</div>
+            <ul class="item-details">
+              <li>Development of educational videos with voiceover on university-level mathematics topics.</li>
+            </ul>
+          </div>
 
+          <div class="teaching-item">
+            <div class="item-header">
+              <h4 class="item-title">Python Engineer</h4>
+              <span class="item-date">Dec 2024 – Present</span>
+            </div>
+            <div class="subheading-custom">Lviv Polytechnic National University · Part-time · Remote (Ukraine)</div>
+            <ul class="item-details">
+              <li>Developed and maintained complex data and concept visualization tools using Python.</li>
+              <li>Extensive use of Manim, Matplotlib, and LaTeX for mathematical and scientific visualization.</li>
+            </ul>
+          </div>
 
-<section class="resume-section p-3 p-lg-5" id="teaching">
-  <div class="my-auto">
+          <div class="teaching-item">
+            <div class="item-header">
+              <h4 class="item-title">Data Analyst</h4>
+              <span class="item-date">Dec 2022 – Feb 2025</span>
+            </div>
+            <div class="subheading-custom">SumandoLab · Part-time · Remote (Colombia)</div>
+            <ul class="item-details">
+              <li>Visualized and communicated complex analytical results for strategic business decisions.</li>
+              <li>Supported data-driven commercial and marketing strategies.</li>
+            </ul>
+          </div>
 
-    <h2 class="mb-5 section-title">Professional Experience</h2>
-
-
-    <!-- ===================== -->
-    <!-- SOFTWARE & DATA ROLES -->
-    <!-- ===================== -->
-    <div class="resume-block">
-      <h3 class="block-title">Software Engineering & Data Science</h3>
-
-      <div class="teaching-item">
-        <div class="item-header">
-          <h4 class="item-title">Python Engineer</h4>
-          <span class="item-date">Dec 2025 – Present</span>
+          <div class="teaching-item">
+            <div class="item-header">
+              <h4 class="item-title">Data Analyst</h4>
+              <span class="item-date">May 2023 – Nov 2023</span>
+            </div>
+            <div class="subheading-custom">University of the Balearic Islands · Temporary Contract · Remote (Spain)</div>
+            <ul class="item-details">
+              <li>Performed full statistical analysis in R for a research project on child health and language quality.</li>
+            </ul>
+          </div>
         </div>
-        <div class="subheading-custom">Studocu · Part-time · Remote (Germany)</div>
-        <ul class="item-details">
-          <li>Development of educational videos with voiceover on university-level mathematics topics.</li>
-        </ul>
-      </div>
 
-      <div class="teaching-item">
-        <div class="item-header">
-          <h4 class="item-title">Python Engineer</h4>
-          <span class="item-date">Dec 2024 – Present</span>
-        </div>
-        <div class="subheading-custom">Lviv Polytechnic National University · Part-time · Remote (Ukraine)</div>
-        <ul class="item-details">
-          <li>Developed and maintained complex data and concept visualization tools using Python.</li>
-          <li>Extensive use of Manim, Matplotlib, and LaTeX for mathematical and scientific visualization.</li>
-        </ul>
-      </div>
+        <!-- ===================== -->
+        <!-- WEB & DESIGN -->
+        <!-- ===================== -->
+        <div class="resume-block">
+          <h3 class="block-title">Web Development & Design</h3>
 
-      <div class="teaching-item">
-        <div class="item-header">
-          <h4 class="item-title">Data Analyst</h4>
-          <span class="item-date">Dec 2022 – Feb 2025</span>
-        </div>
-        <div class="subheading-custom">SumandoLab · Part-time · Remote (Colombia)</div>
-        <ul class="item-details">
-          <li>Visualized and communicated complex analytical results for strategic business decisions.</li>
-          <li>Supported data-driven commercial and marketing strategies.</li>
-        </ul>
-      </div>
+          <div class="teaching-item">
+            <div class="item-header">
+              <h4 class="item-title">Senior Web Developer</h4>
+              <span class="item-date">Nov 2025 – Present</span>
+            </div>
+            <div class="subheading-custom">Fiverr  · Remote (USA)</div>
+            <ul class="item-details">
+              <li>Designed and developed professional websites and academic repositories.</li>
+              <li>Specialized in platforms for researchers and PhD-level academics.</li>
+            </ul>
+          </div>
 
-      <div class="teaching-item">
-        <div class="item-header">
-          <h4 class="item-title">Data Analyst</h4>
-          <span class="item-date">May 2023 – Nov 2023</span>
+          <div class="teaching-item">
+            <div class="item-header">
+              <h4 class="item-title">Graphic Design Consultant</h4>
+              <span class="item-date">Oct 2023 – Present</span>
+            </div>
+            <div class="subheading-custom">CUTMAC  · Remote (Argentina)</div>
+            <ul class="item-details">
+              <li>Created and managed layout templates for technical manuals and documentation.</li>
+              <li>Ensured technical rigor through advanced LaTeX workflows.</li>
+            </ul>
+          </div>
         </div>
-        <div class="subheading-custom">University of the Balearic Islands · Temporary Contract · Remote (Spain)</div>
-        <ul class="item-details">
-          <li>Performed full statistical analysis in R for a research project on child health and language quality.</li>
-        </ul>
+
+        <!-- ===================== -->
+        <!-- ACADEMIA & CONSULTING -->
+        <!-- ===================== -->
+        <div class="resume-block">
+          <h3 class="block-title">Academia, Translation & Consulting</h3>
+
+          <div class="teaching-item">
+            <div class="item-header">
+              <h4 class="item-title">University Professor</h4>
+              <span class="item-date">Dec 2023 – Present</span>
+            </div>
+            <div class="subheading-custom">University of Carabobo</div>
+          </div>
+
+          <div class="teaching-item">
+            <div class="item-header">
+              <h4 class="item-title">Academic Advisor</h4>
+              <span class="item-date">Jul 2025 – Oct 2025</span>
+            </div>
+            <div class="subheading-custom">Upwork  · Remote (Spain)</div>
+            <ul class="item-details">
+              <li>Provided specialized consulting for postgraduate engineering students.</li>
+              <li>Advised on Final Master’s Projects (TFM).</li>
+            </ul>
+          </div>
+
+          <div class="teaching-item">
+            <div class="item-header">
+              <h4 class="item-title">Technical Translator</h4>
+              <span class="item-date">Nov 2019 – Present</span>
+            </div>
+            <div class="subheading-custom">CUTMAC </div>
+            <ul class="item-details">
+              <li>Technical translation of manuals, safety guides, and industrial documentation.</li>
+              <li>English to Argentine Spanish specialization.</li>
+            </ul>
+          </div>
+
+          <div class="teaching-item">
+            <div class="item-header">
+              <h4 class="item-title">Technical Translator</h4>
+              <span class="item-date">Feb 2022 – Jan 2023</span>
+            </div>
+            <div class="subheading-custom">Linguaserve · Part-time · Remote (Spain)</div>
+            <ul class="item-details">
+              <li>Translated and adapted technical content for digital and e-commerce platforms.</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <!-- ===================== -->
-    <!-- WEB & DESIGN -->
-    <!-- ===================== -->
-    <div class="resume-block">
-      <h3 class="block-title">Web Development & Design</h3>
-
-      <div class="teaching-item">
-        <div class="item-header">
-          <h4 class="item-title">Senior Web Developer</h4>
-          <span class="item-date">Nov 2025 – Present</span>
-        </div>
-        <div class="subheading-custom">Fiverr · Freelance · Remote (USA)</div>
-        <ul class="item-details">
-          <li>Designed and developed professional websites and academic repositories.</li>
-          <li>Specialized in platforms for researchers and PhD-level academics.</li>
-        </ul>
-        <div class="item-meta">Skills: HTML · CSS · Jekyll</div>
-      </div>
-
-      <div class="teaching-item">
-        <div class="item-header">
-          <h4 class="item-title">Graphic Design Consultant</h4>
-          <span class="item-date">Oct 2023 – Present</span>
-        </div>
-        <div class="subheading-custom">CUTMAC · Freelance · Remote (Argentina)</div>
-        <ul class="item-details">
-          <li>Created and managed layout templates for technical manuals and documentation.</li>
-          <li>Ensured technical rigor through advanced LaTeX workflows.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- ===================== -->
-    <!-- ACADEMIA & CONSULTING -->
-    <!-- ===================== -->
-    <div class="resume-block">
-      <h3 class="block-title">Academia, Translation & Consulting</h3>
-
-      <div class="teaching-item">
-        <div class="item-header">
-          <h4 class="item-title">University Professor</h4>
-          <span class="item-date">Dec 2023 – Present</span>
-        </div>
-        <div class="subheading-custom">University of Carabobo</div>
-      </div>
-
-      <div class="teaching-item">
-        <div class="item-header">
-          <h4 class="item-title">Academic Advisor</h4>
-          <span class="item-date">Jul 2025 – Oct 2025</span>
-        </div>
-        <div class="subheading-custom">Upwork · Freelance · Remote (Spain)</div>
-        <ul class="item-details">
-          <li>Provided specialized consulting for postgraduate engineering students.</li>
-          <li>Advised on Final Master’s Projects (TFM).</li>
-        </ul>
-      </div>
-
-      <div class="teaching-item">
-        <div class="item-header">
-          <h4 class="item-title">Technical Translator</h4>
-          <span class="item-date">Nov 2019 – Present</span>
-        </div>
-        <div class="subheading-custom">CUTMAC · Freelance</div>
-        <ul class="item-details">
-          <li>Technical translation of manuals, safety guides, and industrial documentation.</li>
-          <li>English to Argentine Spanish specialization.</li>
-        </ul>
-      </div>
-
-      <div class="teaching-item">
-        <div class="item-header">
-          <h4 class="item-title">Technical Translator</h4>
-          <span class="item-date">Feb 2022 – Jan 2023</span>
-        </div>
-        <div class="subheading-custom">Linguaserve · Part-time · Remote (Spain)</div>
-        <ul class="item-details">
-          <li>Translated and adapted technical content for digital and e-commerce platforms.</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="publications">
-  <div class="my-auto">
-
-    <h2 class="mb-5 section-title-highlight">
-      Education, Volunteering & Publications
-    </h2>
-
-    <!-- ===================== -->
-    <!-- EDUCATION -->
-    <!-- ===================== -->
-<h3 class="section-subtitle-modern">Education</h3>
-
-<div class="resume-card accent-left">
-  <div class="card-header">
-    <h4>University of Carabobo</h4>
-    <span class="card-date">2017 – 2024</span>
-  </div>
-  <div class="card-body">
-    <p class="card-role">Licentiate Degree in Mathematics</p>
-    <p class="card-text">
-      Strong background in Probability Distributions (Normal, Binomial, Poisson),
-      Central Limit Theorem, Linear Regression, and Hypothesis Testing,
-      providing a solid foundation for Data Science and Statistical Modeling.
-    </p>
-    <div class="tag-container">
-      <span class="tag">Statistics</span>
-      <span class="tag">Probability</span>
-      <span class="tag">Linear Regression</span>
-      <span class="tag">Data Science</span>
-    </div>
-  </div>
+  </section>
 </div>
 
-<div class="resume-card accent-left">
-  <div class="card-header">
-    <h4>Unidad Educativa Colegio Privado Santa Rosa</h4>
-    <span class="card-date">2012 – 2017</span>
-  </div>
-  <div class="card-body">
-    <p class="card-role">High School Diploma</p>
-    <div class="tag-container">
-      <span class="tag">English</span>
-      <span class="tag">Semantic HTML</span>
-      <span class="tag">Technical Foundations</span>
-    </div>
-  </div>
-</div>
+<script>
+// Interactive Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const experienceTiles = document.querySelectorAll('.experience-tile');
 
-    <!-- ===================== -->
-    <!-- VOLUNTEERING -->
-    <!-- ===================== -->
-    <h3 class="section-subtitle-modern mt-5">Volunteering</h3>
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Remove active class from all buttons
+      filterButtons.forEach(btn => btn.classList.remove('active'));
 
-    <div class="resume-card accent-left">
+      // Add active class to clicked button
+      this.classList.add('active');
+
+      const filterValue = this.getAttribute('data-filter');
+
+      // Filter tiles
+      experienceTiles.forEach(tile => {
+        const categories = tile.getAttribute('data-category').split(',');
+
+        if (filterValue === 'all' || categories.includes(filterValue)) {
+          tile.classList.remove('hidden');
+          setTimeout(() => {
+            tile.style.opacity = '1';
+            tile.style.transform = 'translateY(0)';
+          }, 10);
+        } else {
+          tile.classList.add('hidden');
+          tile.style.opacity = '0';
+          tile.style.transform = 'translateY(20px)';
+        }
+      });
+    });
+  });
+
+  // Add hover effects to tiles
+  experienceTiles.forEach(tile => {
+    tile.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-10px) scale(1.02)';
+    });
+
+    tile.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+
+  // Animate tiles on load
+  setTimeout(() => {
+    experienceTiles.forEach((tile, index) => {
+      setTimeout(() => {
+        tile.style.opacity = '1';
+        tile.style.transform = 'translateY(0)';
+      }, index * 100);
+    });
+  }, 500);
+});
+</script>
+<div class="tab-pane" id="education" role="tabpanel">
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column">
+    <div class="my-auto">
+
+      <!-- Título principal -->
+      <h2 class="mb-5 section-title-highlight">
+        Education, Volunteering & Publications
+      </h2>
+
+      <!-- ===================== -->
+      <!-- EDUCATION -->
+      <!-- ===================== -->
+      <div class="section-block">
+          <h3 class="block-title">Education</h3>
+        <div class="section-header">
+          <div class="section-line"></div>
+        </div>
+<div class="card-grid">
+  <div class="resume-card modern-card card-equal-height">
+    <div class="card-content">
       <div class="card-header">
-        <h4>Teaching Assistant</h4>
-        <span class="card-date">Oct 2021 – Oct 2023</span>
+        <div class="card-header-left">
+          <div class="institution-logo">
+            <img src="img/uc-logo.png" alt="University of Carabobo Logo">
+          </div>
+          <div>
+            <h4 class="card-title">University of Carabobo</h4>
+            <p class="card-role">Licentiate Degree in Mathematics</p>
+          </div>
+        </div>
+        <span class="card-date badge-date highlight-date">2017 – 2024</span>
       </div>
       <div class="card-body">
-        <p class="card-role">FACyT · University of Carabobo</p>
+        <p class="card-text">
+          Strong background in Probability Distributions (Normal, Binomial, Poisson),
+          Central Limit Theorem, Linear Regression, and Hypothesis Testing,
+          providing a solid foundation for Data Science and Statistical Modeling.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="resume-card modern-card card-equal-height">
+    <div class="card-content">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="institution-logo">
+            <img src="img/ST_logo.png" alt="University of Carabobo Logo">
+          </div>
+          <div>
+            <h4 class="card-title">Unidad Educativa Colegio Privado Santa Rosa</h4>
+            <p class="card-role">High School Diploma</p>
+          </div>
+        </div>
+        <span class="card-date badge-date highlight-date">2012 – 2017</span>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          Foundation in technical skills and language proficiency with emphasis on English
+          and semantic HTML development, providing early exposure to computational thinking.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+
+      <!-- ===================== -->
+      <!-- VOLUNTEERING -->
+      <!-- ===================== -->
+      <div class="section-block mt-5">
+          <h3 class="block-title">Volunteering</h3>
+        <div class="section-header">
+          <div class="section-line"></div>
+        </div>
+
+
+<div class="card-grid">
+  <div class="resume-card modern-card">
+    <div class="card-content">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="institution-logo">
+            <img src="img/facyt-logo.png" alt="FACyT University of Carabobo Logo">
+          </div>
+          <div>
+            <h4 class="card-title">Teaching Assistant</h4>
+            <p class="card-role">FACyT · University of Carabobo</p>
+          </div>
+        </div>
+        <span class="card-date badge-date highlight-date">Oct 2021 – Oct 2023</span>
+      </div>
+      <div class="card-body">
         <p class="card-text">
           Delivered instruction and academic support in Analytical Geometry,
           covering pre-calculus fundamentals and advanced algebra topics
           within science and technology programs.
         </p>
-        <div class="tag-container">
-          <span class="tag">Analytical Geometry</span>
-          <span class="tag">Pre-Calculus</span>
-          <span class="tag">Algebra</span>
-        </div>
       </div>
     </div>
+  </div>
 
-    <div class="resume-card accent-left">
+  <div class="resume-card modern-card">
+    <div class="card-content">
       <div class="card-header">
-        <h4>Academic Assistant</h4>
-        <span class="card-date">May 2019</span>
+        <div class="card-header-left">
+          <div class="institution-logo">
+            <img src="img/facyt-logo.png" alt="FACyT University of Carabobo Logo">
+          </div>
+          <div>
+            <h4 class="card-title">Academic Assistant</h4>
+            <p class="card-role">FACyT · University of Carabobo</p>
+          </div>
+        </div>
+        <span class="card-date badge-date highlight-date">May 2019</span>
       </div>
       <div class="card-body">
-        <p class="card-role">FACyT · University of Carabobo</p>
         <p class="card-text">
           Ensured strict compliance with evaluation protocols and supported students
           during academic assessments, maintaining a structured and fair environment.
         </p>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- ===================== -->
-    <!-- PUBLICATIONS -->
-    <!-- ===================== -->
-    <h3 class="section-subtitle-modern mt-5">Publications</h3>
+      <!-- ===================== -->
+      <!-- PUBLICATIONS -->
+      <!-- ===================== -->
+      <div class="section-block mt-5">
+          <h3 class="block-title">Publications</h3>
+        <div class="section-header">
+          <div class="section-line"></div>
+        </div>
 
-    <div class="resume-card highlight">
-      <div class="card-header">
-        <h4>
-          Dynamics of a New Family of One-Point Methods with Third-Order Convergence
-          for Solving Nonlinear Equations
-        </h4>
-        <span class="card-date">March 1, 2025</span>
-      </div>
-      <div class="card-body">
-        <p class="card-role">
-          <em>Engineering Journal, Faculty of Engineering, University of Carabobo</em>
-        </p>
-                <a class="media-btn" href="https://doi.org/10.13140/RG.2.2.29380.54401" target="_blank">
-          Read Article
-        </a>
-        <div class="tag-container">
-          <span class="tag">Numerical Analysis</span>
-          <span class="tag">Nonlinear Equations</span>
-          <span class="tag">Convergence Methods</span>
+        <div class="publication-card featured-card">
+          <div class="card-content">
+            <div class="card-header">
+              <h4 class="card-title">
+                Dynamics of a New Family of One-Point Methods with Third-Order Convergence
+                for Solving Nonlinear Equations
+              </h4>
+              <span class="card-date badge-date">March 1, 2025</span>
+            </div>
+            <div class="card-body">
+              <p class="card-role">
+                <em>Engineering Journal, Faculty of Engineering, University of Carabobo</em>
+              </p>
+              <p class="card-text">
+                A comprehensive study presenting innovative numerical methods for solving
+                nonlinear equations with improved convergence rates and computational efficiency.
+              </p>
+              <div class="card-actions">
+                <a class="media-btn see-more-btn" href="https://doi.org/10.13140/RG.2.2.29380.54401" target="_blank">
+                  Read Article
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-  </div>
-</section>
-<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="media-features">
-  <div class="my-auto">
-    <h2 class="mb-5">Geometric Visualizations</h2>
-
-    <!-- Circle Area -->
-    <article class="resume-item media-item">
-      <div class="resume-content mr-auto">
-        <h3 class="mb-1">Circle Area Derivation</h3>
-        <div class="media-meta">Manim Animation · 1080p HD</div>
-        <p class="media-description">
-          Visual derivation showing how a circle's area can be calculated by dividing it into segments
-          that rearrange to form a rectangle. This geometric transformation demonstrates why
-          the area formula is πr².
-        </p>
-
-        <video
-          src="img/CircleArea.mp4"
-          controls
-          autoplay
-          loop
-          muted
-          width="70%"
-          height="auto"
-          poster="img/circlearea.jpg"
-          preload="metadata">
-          Your browser does not support HTML5 video.
-        </video>
-
-        <br><br>
-        <a class="media-btn see-more-btn" href="https://www.fiverr.com/users/diegolinares/portfolio" target="_blank">
-          See More Details
-        </a>
-      </div>
-    </article>
-
-    <!-- Triangle Area -->
-    <article class="resume-item media-item">
-      <div class="resume-content mr-auto">
-        <h3 class="mb-1">Triangle Area Visualization</h3>
-        <div class="media-meta">Manim Animation · 1080p HD</div>
-        <p class="media-description">
-          Animation demonstrating that a triangle's area equals (a+b+c)/2 × r (semiperimeter × inradius).
-          This visualization connects the triangle's sides with its inscribed circle to derive the area formula.
-        </p>
-
-        <video
-          src="img/TriangleMap.mp4"
-          controls
-          autoplay
-          loop
-          muted
-          width="70%"
-          height="auto"
-          poster="img/trianglemap.jpg"
-          preload="metadata">
-          Your browser does not support HTML5 video.
-        </video>
-
-        <br><br>
-        <a class="media-btn see-more-btn" href="https://www.fiverr.com/users/diegolinares/portfolio" target="_blank">
-          See More Details
-        </a>
-      </div>
-    </article>
-
-    <!-- Polygon/Parallelogram Area -->
-    <article class="resume-item media-item">
-      <div class="resume-content mr-auto">
-        <h3 class="mb-1">Parallelogram Area Animation</h3>
-        <div class="media-meta">Manim Animation · 1080p HD</div>
-        <p class="media-description">
-          Geometric animation showing how a parallelogram's area equals a × b × sin(θ).
-          The visualization demonstrates the relationship between sides, angles, and area
-          through transformation and decomposition.
-        </p>
-
-        <video
-          src="img/PolygonAnimation.mp4"
-          controls
-          autoplay
-          loop
-          muted
-          width="70%"
-          height="auto"
-          poster="img/polygon-thumbnail.jpg"
-          preload="metadata">
-          Your browser does not support HTML5 video.
-        </video>
-
-        <br><br>
-        <a class="media-btn see-more-btn" href="https://www.fiverr.com/users/diegolinares/portfolio" target="_blank">
-          See More Details
-        </a>
-      </div>
-    </article>
-  </div>
-</section>
-
-
 
     </div>
+  </section>
+</div>
+<style>
+/* Estilos para mejorar la presentación */
+.section-block {
+  margin-bottom: 3rem;
+}
+/* Logo de institución con imagen PNG */
+.institution-logo {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Para que la imagen no se salga del contenedor */
+  background: #f8f9fa; /* Fondo neutro por si la imagen no carga */
+  border: 1px solid #e9ecef;
+}
 
-    <!-- Bootstrap core JavaScript -->
+.institution-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Mantiene proporciones de la imagen */
+  padding: 5px; /* Espacio interno para que no toque los bordes */
+}
+
+.section-header {
+  display: block;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.4rem;
+}
+
+/* Estilos actualizados para igual altura de tarjetas */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  align-items: stretch;
+}
+
+/* Tarjetas con igual altura */
+.modern-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modern-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #3498db;
+}
+
+.card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Estructura mejorada del header con logo */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.card-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.4;
+}
+
+/* Color de acento mejorado para accesibilidad */
+.card-role {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0d47a1; /* Azul más oscuro para mejor contraste */
+  margin: 0;
+}
+
+/* Mejor contraste para fechas */
+.card-date.badge-date {
+  background: #1c60ff;
+  color: white;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  white-space: nowrap;
+  margin-left: 1rem;
+  box-shadow: 0 2px 4px rgba(28, 96, 255, 0.2);
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+/* Etiquetas de habilidades (opcional) */
+.card-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.skill-tag {
+  background: #f1f8ff;
+  color: #1c60ff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #d1e3ff;
+}
+
+/* Estilos para la tarjeta de publicación destacada */
+.publication-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  border: 2px solid #3498db;
+  margin-top: 1rem;
+}
+
+.card-actions {
+  margin: 1.5rem 0;
+}
+
+.media-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.media-btn.btn-primary {
+  background: #2c3e50;
+  color: white;
+  border: 2px solid #2c3e50;
+}
+
+.media-btn.btn-primary:hover {
+  background: #3498db;
+  border-color: #3498db;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card-date.badge-date {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+
+  .card-header-left {
+    width: 100%;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>
+<div class="tab-pane" id="teaching" role="tabpanel">
+
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="media-features">
+    <div class="my-auto">
+      <h2 class="mb-5 section-title">Geometric Visualizations</h2>
+
+      <!-- Circle Area -->
+      <article class="resume-item media-item">
+        <div class="resume-content mr-auto">
+          <h3 class="mb-1 item-title">Circle Area Derivation</h3>
+          <div class="media-meta subheading-custom">Manim Animation · 1080p HD</div>
+          <p class="media-description mb-4">
+            Visual derivation showing how a circle's area can be calculated by dividing it into segments
+            that rearrange to form a rectangle. This geometric transformation demonstrates why
+            the area formula is πr².
+          </p>
+
+          <video
+            src="img/CircleArea.mp4"
+            controls
+            autoplay
+            loop
+            muted
+            width="70%"
+            height="auto"
+            poster="img/circlearea.jpg"
+            preload="metadata"
+            class="mb-4">
+            Your browser does not support HTML5 video.
+          </video>
+
+          <br>
+          <a class="media-btn see-more-btn" href="https://www.fiverr.com/users/diegolinares/portfolio" target="_blank">
+            See More Details
+          </a>
+        </div>
+      </article>
+
+      <!-- Triangle Area -->
+      <article class="resume-item media-item mt-5">
+        <div class="resume-content mr-auto">
+          <h3 class="mb-1 item-title">Triangle Area Visualization</h3>
+          <div class="media-meta subheading-custom">Manim Animation · 1080p HD</div>
+          <p class="media-description mb-4">
+            Animation demonstrating that a triangle's area equals (a+b+c)/2 × r (semiperimeter × inradius).
+            This visualization connects the triangle's sides with its inscribed circle to derive the area formula.
+          </p>
+
+          <video
+            src="img/TriangleMap.mp4"
+            controls
+            autoplay
+            loop
+            muted
+            width="70%"
+            height="auto"
+            poster="img/trianglemap.jpg"
+            preload="metadata"
+            class="mb-4">
+            Your browser does not support HTML5 video.
+          </video>
+
+          <br>
+          <a class="media-btn see-more-btn" href="https://www.fiverr.com/users/diegolinares/portfolio" target="_blank">
+            See More Details
+          </a>
+        </div>
+      </article>
+
+      <!-- Polygon/Parallelogram Area -->
+      <article class="resume-item media-item mt-5">
+        <div class="resume-content mr-auto">
+          <h3 class="mb-1 item-title">Parallelogram Area Animation</h3>
+          <div class="media-meta subheading-custom">Manim Animation · 1080p HD</div>
+          <p class="media-description mb-4">
+            Geometric animation showing how a parallelogram's area equals a × b × sin(θ).
+            The visualization demonstrates the relationship between sides, angles, and area
+            through transformation and decomposition.
+          </p>
+
+          <video
+            src="img/PolygonAnimation.mp4"
+            controls
+            autoplay
+            loop
+            muted
+            width="70%"
+            height="auto"
+            poster="img/polygon-thumbnail.jpg"
+            preload="metadata"
+            class="mb-4">
+            Your browser does not support HTML5 video.
+          </video>
+
+          <br>
+          <a class="media-btn see-more-btn" href="https://www.fiverr.com/users/diegolinares/portfolio" target="_blank">
+            See More Details
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+</div>
+
+
+
+      </div>
+
+    </div>
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('Script de pestañas cargado');
+
+        function switchTab(tabId) {
+          console.log('Cambiando a pestaña:', tabId);
+
+          document.querySelectorAll('.tab-pane').forEach(tab => {
+            tab.classList.remove('active');
+            tab.style.display = 'none';
+          });
+
+          const activeTab = document.getElementById(tabId);
+          if (activeTab) {
+            activeTab.classList.add('active');
+            activeTab.style.display = 'block';
+            console.log('Pestaña encontrada y activada:', tabId);
+          } else {
+            console.error('Pestaña no encontrada:', tabId);
+          }
+
+          document.querySelectorAll('.tab-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-tab') === tabId) {
+              link.classList.add('active');
+            }
+          });
+
+          document.querySelectorAll('.main-tabs .nav-link').forEach(link => {
+            link.classList.remove('active');
+            const tabTarget = link.getAttribute('data-tab-target');
+            if (tabTarget === tabId) {
+              link.classList.add('active');
+            }
+          });
+
+          if (history.pushState) {
+            history.pushState(null, null, '#' + tabId);
+          } else {
+            window.location.hash = '#' + tabId;
+          }
+        }
+
+        document.querySelectorAll('.tab-link').forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const tabId = this.getAttribute('data-tab');
+            console.log('Clic en sidebar, tabId:', tabId);
+            if (tabId) {
+              switchTab(tabId);
+            }
+          });
+        });
+
+        document.querySelectorAll('.main-tabs .nav-link').forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const tabId = this.getAttribute('data-tab-target');
+            console.log('Clic en pestaña horizontal, tabId:', tabId);
+            if (tabId) {
+              switchTab(tabId);
+            }
+          });
+        });
+
+        function initializeTab() {
+          document.querySelectorAll('.tab-pane').forEach(tab => {
+            if (tab.id !== 'Bio') {
+              tab.style.display = 'none';
+              tab.classList.remove('active');
+            }
+          });
+
+          const bioTab = document.getElementById('Bio');
+          if (bioTab) {
+            bioTab.style.display = 'block';
+            bioTab.classList.add('active');
+          }
+
+          const hash = window.location.hash.substring(1);
+          const validTabs = ['Bio', 'Experience', 'education', 'teaching'];
+
+          if (hash && validTabs.includes(hash)) {
+            setTimeout(() => {
+              switchTab(hash);
+            }, 100);
+          } else {
+            switchTab('Bio');
+          }
+        }
+
+        initializeTab();
+
+        window.addEventListener('popstate', function() {
+          const hash = window.location.hash.substring(1);
+          const validTabs = ['Bio', 'Experience', 'education', 'teaching'];
+          if (validTabs.includes(hash)) {
+            switchTab(hash);
+          }
+        });
+
+        console.log('Número de pestañas encontradas:', document.querySelectorAll('.tab-pane').length);
+        console.log('Número de enlaces de sidebar:', document.querySelectorAll('.tab-link').length);
+        console.log('Número de botones de pestañas:', document.querySelectorAll('.main-tabs .nav-link').length);
+      });
+    </script>
 
   </body>
 
