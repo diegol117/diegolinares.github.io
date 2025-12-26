@@ -8,7 +8,7 @@
 ===================== */
 
 body {
-  font-family: 'Open Sans', serif;
+font-family: 'Montserrat', sans-serif;
   padding-top: 54px;
   color: #495057;
   background-color: #ffffff;
@@ -26,8 +26,7 @@ body {
    HEADINGS
 ===================== */
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Saira Extra Condensed', serif;
+h1, h2, h3, h4, h5, h6 {font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   color: #343a40;
   letter-spacing: 0.04em;
@@ -44,12 +43,12 @@ h2 {
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   margin-bottom: 1.5rem;
 }
 
 h4 {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   text-transform: none; /* 🔴 clave: evita fatiga visual */
 }
 
@@ -66,12 +65,12 @@ h5 {
 .subheading {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.15rem;
   color: #6c757d;
 }
 
 .subheading-custom {
-  font-family: 'Georgia', 'Times New Roman', serif;
+font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 1.05rem;
   color: #555;
@@ -111,7 +110,7 @@ section.resume-section {
 
 .block-title {
   font-size: 1.9rem;
-  border-bottom: 2px solid #383fbd;
+  border-bottom: 2px solid #1c60ff;
   padding-bottom: 0.4rem;
   margin-bottom: 2rem;
 }
@@ -130,13 +129,13 @@ section.resume-section {
 .teaching-item {
   padding: 1.1rem 1.25rem;
   margin-bottom: 1.1rem;
-  border-left: 4px solid #4538bd;
-  background-color: #fdfdfd;
+  border-left: 4px solid #1c60ff;
+  background-color: #ffffff;
   transition: background-color 0.2s ease;
 }
 
 .teaching-item:hover {
-  background-color: #f8f9fa;
+  background-color: #f2fbff;
 }
 
 .item-header {
@@ -160,8 +159,9 @@ section.resume-section {
 }
 
 .item-date {
-  font-size: 0.9rem;
-  color: #383fbd;
+font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  color: #007bff;
   white-space: nowrap;
 }
 
@@ -182,7 +182,7 @@ section.resume-section {
 ===================== */
 
 a {
-  color: #383fbd;
+  color: #001E62;
 }
 
 a:hover,
@@ -192,11 +192,11 @@ a:active {
 }
 
 .text-primary {
-  color: #383fbd !important;
+  color: #03329f !important;
 }
 
 .bg-primary {
-  background-color: #383fbd !important;
+  background-color: #001E62 !important;
 }
 
 /* =====================
@@ -255,7 +255,7 @@ a:active {
 }
 
 .list-social-icons a:hover {
-  color: #383fbd;
+  color: #001E62;
 }
 
 .list-social-icons a .fa-lg {
@@ -267,7 +267,7 @@ a:active {
 }
 
 .list-icons .list-inline-item i:hover {
-  color: #383fbd;
+  color: #001E62;
 }
 /* =====================
    MEDIA & PUBLICATIONS
@@ -291,24 +291,52 @@ a:active {
   color: #495057;
   margin-bottom: 1rem;
 }
+.media-btn.see-more-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #fdfeff; /* Azul oscuro profesional */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid #2c3e50; /* Borde del mismo color que el fondo */
+    border-bottom: 3px solid #1a252f; /* Borde inferior más oscuro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.media-btn.see-more-btn:hover {
+    background-color: #cee7ff; /* Azul más claro en hover */
+    border-color: #34495e;
+    border-bottom-color: #1a252f; /* Mantener el borde inferior oscuro en hover */
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.media-btn.see-more-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+/* Button – académico y sobrio */
 .media-btn {
   display: inline-block;
   padding: 0.45rem 1.4rem;
-  border: 1px solid #383fbd !important;
+  border: 1px solid #001E62;
   border-radius: 2px;
-  color: #383fbd !important;
+  color: #001E62;
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: all 0.2s ease !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .media-btn:hover {
-  background-color: #383fbd !important;
-  color: #ffffff !important;
-  transform: none; /* O el valor que prefieras */
+  background-color: #001E62;
+  color: #ffffff;
 }
 
 /* =====================
@@ -335,7 +363,7 @@ a:active {
 
 .section-subtitle {
   font-size: 1.75rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   color: #343a40;
 }
@@ -360,7 +388,7 @@ a:active {
 .cv-paragraph {
   font-size: 0.95rem;
   line-height: 1.7;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.1rem;
 }
 
 /* =====================
@@ -406,112 +434,21 @@ a:active {
   border: 0.5rem solid rgba(255,255,255,0.2); /* igual que antes */
 }
 
-.section-title-highlight {
-  font-weight: 700;
-  border-bottom: 3px solid #4f46e5;
-  display: inline-block;
-  padding-bottom: 8px;
+.cv-special-link {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    background: rgba(231, 76, 60, 0.1) !important;
+    border-radius: 10px !important;
+    margin: 5px 10px !important;
+    border-left: 4px solid #ffffff !important;
 }
 
-.section-subtitle-modern {
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #374151;
+.cv-special-link:hover {
+    background: rgba(231, 76, 60, 0.2) !important;
+    color: #fff2f1 !important;
 }
 
-.resume-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 20px 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.cv-text {
+    position: relative;
 }
-.resume-card.accent-left {
-  border-left: 4px solid #4f46e5; /* color principal */
-}
-
-.resume-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 15px;
-}
-
-.card-header h4 {
-  margin: 0;
-  font-size: 1.8rem;
-}
-
-.card-date {
-  font-size: 0.85rem;
-  color: #6b7280;
-  white-space: nowrap;
-}
-
-.card-role {
-  font-weight: 600;
-  margin-top: 8px;
-}
-
-.card-text {
-  margin-top: 8px;
-  color: #4b5563;
-}
-
-.tag-container {
-  margin-top: 12px;
-}
-
-.tag {
-  display: inline-block;
-  background: #eef2ff;
-  color: #3730a3;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  margin-right: 6px;
-  margin-bottom: 6px;
-}
-
-.accent-left {
-  border-left: 4px solid #10b981;
-}
-
-.highlight {
-  border-left: 4px solid #6366f1;
-}
-/* =====================
-   ELIMINAR SALTO DE LÍNEA ENTRE SUBHEADING Y PÁRRAFO
-===================== */
-
-/* Opción 1: Para un caso específico */
-.subheading.mb-5 + p.mb-4.text-justify {
-  display: inline;
-  margin-left: 10px;
-}
-
-/* Y ajustar el subheading para que esté en línea también */
-.subheading.mb-5 {
-  display: inline-block;
-  margin-bottom: 0 !important;
-}
-
-/* Opción 2: Si quieres que sea más general para todos los subheadings seguidos de párrafos */
-.subheading + p {
-  display: inline;
-  margin-left: 10px;
-}
-
-.subheading {
-  display: inline-block;
-  margin-bottom: 0;
-}
-
-/* Opción 3: Usar flexbox en el contenedor padre si existe */
-/* Esto sería más limpio si tienes control sobre el HTML */
