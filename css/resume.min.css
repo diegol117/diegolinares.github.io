@@ -26,6 +26,32 @@ font-family: 'Montserrat', sans-serif;
    HEADINGS
 ===================== */
 /* Fuerza a las pestañas a estar en una sola fila en móviles */
+/* Contenedor del video */
+.video-wrapper {
+    width: 100%;
+    text-align: center; /* Centra el video en PC */
+    margin-bottom: 1rem;
+}
+
+/* La magia del responsive */
+.video-responsive {
+    width: 100%;           /* En móvil ocupa todo el ancho */
+    height: auto;
+    max-width: 650px;      /* En PC no se hace gigante, se queda en un tamaño elegante */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: inline-block; /* Para que responda al text-align: center */
+}
+
+/* Opcional: Ajuste de márgenes para el botón en móvil */
+@media (max-width: 768px) {
+    .see-more-btn {
+        display: block;    /* El botón ocupa todo el ancho para ser fácil de tocar */
+        text-align: center;
+        padding: 12px;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-tabs {
         display: flex !important;
